@@ -38,6 +38,9 @@
         }
 
         .wrapper {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
             padding: 0 20px;
         }
 
@@ -45,6 +48,11 @@
         .footer {
             padding: 10px 0;
             background-color: #eee;
+        }
+        .footer__wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -75,6 +83,7 @@
             height: calc(100vh - 160px);
             padding: 20px 0;
         }
+
         .lesson__list {
             margin-bottom: 30px;
         }
@@ -129,6 +138,7 @@
             font-size: 14px;
             cursor: pointer;
         }
+
         .btn:hover {
             background-color: #fa759e;
             opacity: 0.8;
@@ -142,6 +152,26 @@
             margin-bottom: 20px;
         }
 
+        .copyright {
+            max-width: 180px;
+            font-size: 13px;
+            color: #C1C1C1;
+        }
+
+        .copyright a {
+            color: #C1C1C1;
+        }
+
+        .social {
+            display: flex;
+        }
+
+        .social__link {
+            display: block;
+            width: 50px;
+            height: 50px;
+            margin: 0 5px;
+        }
     </style>
 </head>
 <body>
@@ -251,7 +281,7 @@
 <!--    </div>-->
 <!--</section>-->
 <footer class="footer">
-    <div class="wrapper">
+    <div class="wrapper footer__wrap">
         <div class="logo">
             <a href="/" class="logo__icon">
                 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
@@ -281,6 +311,43 @@
                 </svg>
             </a>
             <span class="logo__desc">Learning JavaScript by @jestyal</span>
+        </div>
+        <div class="social">
+            <a href="https://www.instagram.com/jestyal/" class="social__link" title="instagram" target="_blank"
+               rel="noopener nofollow">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m26 32h-20c-3.314 0-6-2.686-6-6v-20c0-3.314 2.686-6 6-6h20c3.314 0 6 2.686 6 6v20c0 3.314-2.686 6-6 6z"
+                          fill="#d4fbff"/>
+                    <path d="m16.003 11.892c-2.269 0-4.105 1.839-4.105 4.105 0 2.268 1.839 4.105 4.105 4.105 2.269 0 4.105-1.839 4.105-4.105 0-2.269-1.839-4.105-4.105-4.105zm0 6.77c-1.472 0-2.665-1.193-2.665-2.665s1.193-2.665 2.665-2.665 2.665 1.192 2.665 2.665c0 1.472-1.193 2.665-2.665 2.665z"
+                          fill="#6dc9f7"/>
+                    <path d="m19.299 8.05c-1.472-.069-5.118-.066-6.592 0-1.295.061-2.437.374-3.357 1.294-1.539 1.539-1.342 3.612-1.342 6.653 0 3.112-.173 5.138 1.342 6.653 1.544 1.544 3.648 1.342 6.653 1.342 3.683 0 7.713.353 7.947-4.699.069-1.473.066-5.118 0-6.591-.132-2.809-1.64-4.512-4.651-4.652zm2.329 13.582c-1.009 1.009-2.408.919-5.646.919-3.333 0-4.67.049-5.646-.929-1.124-1.118-.92-2.914-.92-5.635 0-6.65.381-6.565 6.556-6.565l.03.02c6.622 0 6.554.429 6.554 6.555.001 3.294.064 4.639-.928 5.635z"
+                          fill="#6dc9f7"/>
+                    <circle cx="20.271" cy="11.73" fill="#6dc9f7" r=".959"/>
+                </svg>
+            </a>
+            <a href="https://github.com/jestyal" class="social__link" title="github" target="_blank"
+               rel="noopener nofollow">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m26 32h-20c-3.314 0-6-2.686-6-6v-20c0-3.314 2.686-6 6-6h20c3.314 0 6 2.686 6 6v20c0 3.314-2.686 6-6 6z"
+                          fill="#d4fbff"/>
+                    <path d="m16 8.333c-4.42 0-8 3.52-8 7.861 0 3.474 2.292 6.42 5.47 7.458.4.074.547-.169.547-.378 0-.187-.007-.681-.01-1.336-2.225.474-2.695-1.055-2.695-1.055-.364-.907-.89-1.15-.89-1.15-.725-.487.056-.478.056-.478.803.055 1.225.81 1.225.81.713 1.202 1.873.855 2.33.654.072-.508.278-.855.507-1.051-1.777-.197-3.644-.873-3.644-3.885 0-.858.31-1.559.823-2.109-.09-.198-.36-.998.07-2.081 0 0 .67-.211 2.2.806.64-.175 1.32-.261 2-.265.68.004 1.36.09 2 .265 1.52-1.017 2.19-.806 2.19-.806.43 1.083.16 1.882.08 2.081.51.55.82 1.251.82 2.109 0 3.02-1.87 3.685-3.65 3.878.28.236.54.718.54 1.454 0 1.052-.01 1.897-.01 2.153 0 .206.14.452.55.373 3.201-1.03 5.491-3.978 5.491-7.446 0-4.342-3.582-7.862-8-7.862z"
+                          fill="#6dc9f7"/>
+                </svg>
+            </a>
+            <a href="https://t.me/jestyal" class="social__link" title="telegram" target="_blank"
+               rel="noopener nofollow">
+                <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <path d="m26 32h-20c-3.314 0-6-2.686-6-6v-20c0-3.314 2.686-6 6-6h20c3.314 0 6 2.686 6 6v20c0 3.314-2.686 6-6 6z"
+                          fill="#d4fbff"/>
+                    <path d="m16 24c4.419 0 8-3.581 8-8s-3.581-8-8-8-8 3.581-8 8 3.581 8 8 8zm-4.34-8.173 7.713-2.974c.358-.129.671.087.555.629l.001-.001-1.313 6.187c-.097.438-.358.545-.723.339l-2-1.474-.965.929c-.107.107-.197.197-.403.197l.142-2.036 3.707-3.349c.161-.142-.036-.222-.248-.081l-4.581 2.884-1.974-.616c-.43-.135-.439-.428.089-.634z"
+                          fill="#6dc9f7"/>
+                </svg>
+            </a>
+        </div>
+        <div class="copyright">
+            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons">Flat
+                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect">Pixel
+                perfect</a> from <a href="https://www.flaticon.com/ru/" title="Flaticon">www.flaticon.com</a></div>
         </div>
     </div>
 </footer>
