@@ -64,8 +64,15 @@
             font-weight: bolder;
         }
 
+        .title {
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: bolder;
+        }
+
 
         .lesson__wrap {
+            height: calc(100vh - 160px);
             padding: 20px 0;
         }
         .lesson__list {
@@ -73,8 +80,7 @@
         }
 
         .lesson__link {
-            display: block;
-            width: fit-content;
+
         }
 
         .lesson__link:not(:last-of-type) {
@@ -176,61 +182,74 @@
 </header>
 <section class="lesson__wrap">
     <div class="wrapper">
+        <h1 class="title">Lessons:</h1>
         <div class="lesson__list">
-            <a href="lessons/lesson1/calculator.html" class="lesson__link">Lesson 1 - калькулятор</a>
-            <a href="#" class="lesson__link">Lesson 2</a>
-            <a href="#" class="lesson__link">Lesson 3</a>
+            <div class="lesson__link">
+                Lesson 1 - <a href="lessons/lesson1/calculator.html" class="">калькулятор</a>
+            </div>
+            <div class="lesson__link">
+                Lesson 2
+            </div>
+            <div class="lesson__link">
+                Lesson 3
+            </div>
+            <div class="lesson__link">
+                Lesson 4
+            </div>
+            <div class="lesson__link">
+                Lesson 5
+            </div>
         </div>
     </div>
 </section>
 
 
-<section class="lesson">
-    <div class="wrapper">
-        <div class="lesson__item">
-            <div class="lesson__desc">
-                <h2 class="lesson__title">Приветствие</h2>
-                <div class="lesson__task">
-                    1. Создайте страницу, которая по нажатию на кнопку спрашивает имя у пользователя и выводит
-                    персонифицированное приветственное сообщение типа "Привет, Маша!".
-                </div>
-            </div>
-            <div class="lesson__solution">
-                <div class="welcome">
-                    <button class="btn" onclick="showMessage()">Как тебя зовут?</button>
-                </div>
-            </div>
-        </div>
-        <div class="lesson__item">
-            <div class="lesson__desc">
-                <h2 class="lesson__title">Калькулятор</h2>
-                <div class="lesson__task">
-                    2. Сделайте простой калькулятор на 4 действия (сложение, вычитание, деление, умножение). 4 кнопки,
-                    по
-                    нажатию
-                    которые запрашиваются два числа и выдается результат их вычисления, соответствующий действию на
-                    кнопке.
-                </div>
-            </div>
-            <div class="lesson__solution">
-                <div class="calculator">
-                    <div class="calculator__item">
-                        <button class="btn calculator__btn" onclick="calcSum()">Сложение</button>
-                    </div>
-                    <div class="calculator__item">
-                        <button class="btn calculator__btn" onclick="calcDiff()">Вычитание</button>
-                    </div>
-                    <div class="calculator__item">
-                        <button class="btn calculator__btn" onclick="calcMult()">Умножение</button>
-                    </div>
-                    <div class="calculator__item">
-                        <button class="btn calculator__btn" onclick="calcDiv()">Деление</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<!--<section class="lesson">-->
+<!--    <div class="wrapper">-->
+<!--        <div class="lesson__item">-->
+<!--            <div class="lesson__desc">-->
+<!--                <h2 class="lesson__title">Приветствие</h2>-->
+<!--                <div class="lesson__task">-->
+<!--                    1. Создайте страницу, которая по нажатию на кнопку спрашивает имя у пользователя и выводит-->
+<!--                    персонифицированное приветственное сообщение типа "Привет, Маша!".-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="lesson__solution">-->
+<!--                <div class="welcome">-->
+<!--                    <button class="btn" onclick="showMessage()">Как тебя зовут?</button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="lesson__item">-->
+<!--            <div class="lesson__desc">-->
+<!--                <h2 class="lesson__title">Калькулятор</h2>-->
+<!--                <div class="lesson__task">-->
+<!--                    2. Сделайте простой калькулятор на 4 действия (сложение, вычитание, деление, умножение). 4 кнопки,-->
+<!--                    по-->
+<!--                    нажатию-->
+<!--                    которые запрашиваются два числа и выдается результат их вычисления, соответствующий действию на-->
+<!--                    кнопке.-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="lesson__solution">-->
+<!--                <div class="calculator">-->
+<!--                    <div class="calculator__item">-->
+<!--                        <button class="btn calculator__btn" onclick="calcSum()">Сложение</button>-->
+<!--                    </div>-->
+<!--                    <div class="calculator__item">-->
+<!--                        <button class="btn calculator__btn" onclick="calcDiff()">Вычитание</button>-->
+<!--                    </div>-->
+<!--                    <div class="calculator__item">-->
+<!--                        <button class="btn calculator__btn" onclick="calcMult()">Умножение</button>-->
+<!--                    </div>-->
+<!--                    <div class="calculator__item">-->
+<!--                        <button class="btn calculator__btn" onclick="calcDiv()">Деление</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 <footer class="footer">
     <div class="wrapper">
         <div class="logo">
