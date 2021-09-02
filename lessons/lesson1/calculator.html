@@ -7,9 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/java-script.svg" type="image/svg">
-    <title>JavaScript lessons</title>
-
+    <link rel="shortcut icon" href="/assets/images/calculator.svg" type="image/svg">
+    <title>Calculator</title>
     <style>
         * {
             margin: 0;
@@ -175,7 +174,6 @@
     </style>
 </head>
 <body>
-
 <header class="header">
     <div class="wrapper">
         <div class="logo">
@@ -212,22 +210,47 @@
 </header>
 <section class="lesson__wrap">
     <div class="wrapper">
-        <h1 class="title">Lessons:</h1>
-        <div class="lesson__list">
-            <div class="lesson__link">
-                Lesson 1 - <a href="lessons/lesson1/calculator.html" class="">калькулятор</a>
+        <div class="lesson">
+            <div class="lesson__item">
+                <div class="lesson__desc">
+                    <h2 class="lesson__title">Приветствие</h2>
+                    <div class="lesson__task">
+                        1. Создайте страницу, которая по нажатию на кнопку спрашивает имя у пользователя и выводит
+                        персонифицированное приветственное сообщение типа "Привет, Маша!".
+                    </div>
+                </div>
+                <div class="lesson__solution">
+                    <div class="welcome">
+                        <button class="btn" onclick="showMessage()">Как тебя зовут?</button>
+                    </div>
+                </div>
             </div>
-            <div class="lesson__link">
-                Lesson 2
-            </div>
-            <div class="lesson__link">
-                Lesson 3
-            </div>
-            <div class="lesson__link">
-                Lesson 4
-            </div>
-            <div class="lesson__link">
-                Lesson 5
+            <div class="lesson__item">
+                <div class="lesson__desc">
+                    <h2 class="lesson__title">Калькулятор</h2>
+                    <div class="lesson__task">
+                        2. Сделайте простой калькулятор на 4 действия (сложение, вычитание, деление, умножение). 4 кнопки, по
+                        нажатию
+                        которые запрашиваются два числа и выдается результат их вычисления, соответствующий действию на
+                        кнопке.
+                    </div>
+                </div>
+                <div class="lesson__solution">
+                    <div class="calculator">
+                        <div class="calculator__item">
+                            <button class="btn calculator__btn" onclick="calcSum()">Сложение</button>
+                        </div>
+                        <div class="calculator__item">
+                            <button class="btn calculator__btn" onclick="calcDiff()">Вычитание</button>
+                        </div>
+                        <div class="calculator__item">
+                            <button class="btn calculator__btn" onclick="calcMult()">Умножение</button>
+                        </div>
+                        <div class="calculator__item">
+                            <button class="btn calculator__btn" onclick="calcDiv()">Деление</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -304,5 +327,44 @@
         </div>
     </div>
 </footer>
+<script>
+    //приветствие
+    function showMessage() {
+        let name = prompt('Как тебя зовут?', 'Имя');
+        alert(`Привет, ${name}!`);
+    }
+
+
+    //калькулятор
+    function calcSum() {
+        let x = prompt('Число 1', ''),
+            y = prompt('Число 2', '');
+        alert(`Результат сложения: ${x} + ${y} = ${Number(x) + Number(y)}`);
+    }
+
+    function calcDiff() {
+        let x = prompt('Число 1', ''),
+            y = prompt('Число 2', '');
+        alert(`Результат вычитания: ${x} - ${y} = ${Number(x) - Number(y)}`);
+    }
+
+    function calcMult() {
+        let x = prompt('Число 1', ''),
+            y = prompt('Число 2', '');
+        alert(`Результат умножения: ${x} * ${y} = ${Number(x) * Number(y)}`);
+    }
+
+    function calcDiv() {
+        let x = prompt('Число 1', ''),
+            y = prompt('Число 2', '');
+        if (y == 0) {
+            alert('На ноль делить нельзя!')
+        } else {
+            alert(`Результат деления: ${x} / ${y} = ${Number(x) / Number(y)}`);
+        }
+    }
+
+</script>
+
 </body>
 </html>
