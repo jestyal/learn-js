@@ -1,0 +1,44 @@
+/*lessons*/
+.lesson__wrap {
+    height: calc(100vh - 160px);
+    padding: 20px 0;
+}
+
+.lesson__list {
+    margin-bottom: 30px;
+}
+
+.lesson__link:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+.lesson {
+    margin-bottom: 50px;
+}
+
+.lesson__item {
+    border: 2px solid #eee;
+}
+
+.lesson__item:not(:last-of-type) {
+    margin-bottom: 30px;
+}
+
+.lesson__desc {
+    padding: 20px;
+    background-color: #eee;
+}
+
+.lesson__title {
+    margin: 0 0 20px;
+    font-size: 18px;
+}
+
+.lesson__task {
+    max-width: 560px;
+    margin-bottom: 20px;
+}
+
+.lesson__solution {
+    padding: 20px;
+}
