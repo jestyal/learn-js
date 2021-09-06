@@ -24,6 +24,14 @@
     margin-bottom: 30px;
 }
 
+.lesson__link {
+    font-weight: bolder;
+}
+
+.lesson__link a {
+    font-weight: normal;
+}
+
 .lesson__desc {
     padding: 20px;
     background-color: #eee;
