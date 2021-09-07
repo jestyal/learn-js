@@ -1,0 +1,53 @@
+.gallery {
+    position: relative;
+}
+.gallery__wrap {
+    position: relative;
+    display: flex;
+    max-width: 400px;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+.gallery__item {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.gallery__item_active {
+    display: block;
+}
+.gallery__item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+}
+.arrow__wrap {
+    display: flex;
+    padding: 20px 0 0;
+}
+.arrow {
+    display: block;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.arrow svg {
+    fill: var(--color-navy);
+}
+.arrow:hover svg {
+    fill: var(--color-pink);
+}
+.arrow_prev {
+    margin-right: 10px;
+    transform: rotate(90deg);
+}
+.arrow_next {
+    margin-left: 10px;
+    transform: rotate(270deg);
+}
