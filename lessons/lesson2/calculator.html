@@ -55,15 +55,31 @@
                 <div class="lesson__desc">
                     <h2 class="lesson__title">Калькулятор</h2>
                     <div class="lesson__task">
-                        (Сделайте простой калькулятор на 4 действия (сложение, вычитание, деление, умножение). 4 кнопки, по
-                        нажатию которые запрашиваются два числа и выдается результат их вычисления, соответствующий действию на
-                        кнопке.)
+                        (Сделайте простой калькулятор на 4 действия (сложение, вычитание, деление, умножение). 4 кнопки,
+                        по нажатию которые запрашиваются два числа и выдается результат их вычисления, соответствующий
+                        действию на кнопке.)
 
-                        Перепишите домашнее задание прошлой недели c помощью input для ввода данных и div (либо input) для вывода результата
+                        Перепишите домашнее задание прошлой недели c помощью input для ввода данных и div (либо input)
+                        для вывода результата
                     </div>
                 </div>
                 <div class="lesson__solution">
                     <div class="calculator">
+                        <div class="calculator__data">
+                            <label class="calculator__label">
+                                <span class="calculator__text">Введите первое число:</span>
+                                <input type="text" class="calculator__input form__input" placeholder="Введите первое число">
+                            </label>
+                            <label class="calculator__label">
+                                <span class="calculator__text">Введите второе число:</span>
+                                <input type="text" class="calculator__input form__input" placeholder="Введите второе число">
+                            </label>
+                            <div class="calculator__result-wrap">
+                                <span class="calculator__text">Результат:</span>
+                                <span class="calculator__result"></span>
+                            </div>
+                        </div>
+
                         <div class="calculator__item">
                             <button class="btn calculator__btn" onclick="calcSum()">Сложение</button>
                         </div>
@@ -148,9 +164,11 @@
             </a>
         </div>
         <div class="copyright">
-            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons" target="_blank"
+            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons"
+                                  target="_blank"
                                   rel="noopener nofollow">Flat
-                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect" target="_blank"
+                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect"
+                              target="_blank"
                               rel="noopener nofollow">Pixel
                 perfect</a> from <a href="https://www.flaticon.com/ru/" title="Flaticon" target="_blank"
                                     rel="noopener nofollow">www.flaticon.com</a></div>

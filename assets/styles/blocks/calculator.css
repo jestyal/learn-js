@@ -1,3 +1,19 @@
 .calculator__item:not(:last-of-type) {
     margin-bottom: 20px;
 }
+.calculator__data {
+    display: flex;
+    margin-bottom: 20px;
+}
+.calculator__label {
+    display: block;
+    margin-right: 20px;
+}
+.calculator__text {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+.calculator__result {
+    display: block;
+}
