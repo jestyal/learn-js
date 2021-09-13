@@ -55,11 +55,14 @@
                 <div class="lesson__desc">
                     <h2 class="lesson__title">Калькулятор</h2>
                     <div class="lesson__task">
-                        <p>(Сделайте простой калькулятор на 4 действия (сложение, вычитание, деление, умножение). 4 кнопки,
-                        по нажатию которые запрашиваются два числа и выдается результат их вычисления, соответствующий
+                        <p>(Сделайте простой калькулятор на 4 действия (сложение, вычитание, деление, умножение). 4
+                            кнопки,
+                            по нажатию которые запрашиваются два числа и выдается результат их вычисления,
+                            соответствующий
                             действию на кнопке.)</p>
 
-                        <p>Перепишите домашнее задание прошлой недели c помощью input для ввода данных и div (либо input)
+                        <p>Перепишите домашнее задание прошлой недели c помощью input для ввода данных и div (либо
+                            input)
                             для вывода результата</p>
                     </div>
                 </div>
@@ -68,15 +71,17 @@
                         <div class="calculator__data">
                             <label class="calculator__label">
                                 <span class="calculator__text">Введите первое число:</span>
-                                <input id="number1" onclick="getNumber1()" type="text" class="calculator__input form__input" placeholder="Введите первое число">
+                                <input id="number1" onchange="getNumber1()" type="text"
+                                       class="calculator__input form__input" placeholder="Введите первое число">
                             </label>
                             <label class="calculator__label">
                                 <span class="calculator__text">Введите второе число:</span>
-                                <input id="number2" onclick="getNumber2()"  type="text" class="calculator__input form__input" placeholder="Введите второе число">
+                                <input id="number2" onchange="getNumber2()" type="text"
+                                       class="calculator__input form__input" placeholder="Введите второе число">
                             </label>
                             <div class="calculator__result-wrap">
                                 <span class="calculator__text">Результат:</span>
-                                <span class="calculator__result"></span>
+                                <span id="calculator__result" class="calculator__result"></span>
                             </div>
                         </div>
 
@@ -176,52 +181,46 @@
     </div>
 </footer>
 <script>
-
-    let number1 = +document.getElementById('number1');
-    let number2 = +document.getElementById('number2');
-    console.log(number1);
-    console.log(number2);
-
     function getNumber1() {
-        let number1 = document.getElementById('number1')[0];
-        console.log(number2);
+        let number1 = +document.getElementById('number1').value;
         return number1;
     }
-    //
-    // function getNumber2() {
-    //     let number2 = document.getElementById('number2')[0];
-    //     return number2;
-    // }
-    //
 
+    function getNumber2() {
+        let number2 = +document.getElementById('number2').value;
+        return number2;
+    }
 
-    //калькулятор
+    let result = 0;
+
+    showResult();
+    function showResult() {
+        let resultDiv = document.getElementById("calculator__result");
+        resultDiv.innerHTML = result;
+    }
+
     function calcSum() {
-        let x = prompt('Число 1', ''),
-            y = prompt('Число 2', '');
-        alert(`Результат сложения: ${x} + ${y} = ${Number(x) + Number(y)}`);
+        result = getNumber1() + getNumber2();
+        showResult(result);
     }
 
     function calcDiff() {
-        let x = prompt('Число 1', ''),
-            y = prompt('Число 2', '');
-        alert(`Результат вычитания: ${x} - ${y} = ${Number(x) - Number(y)}`);
+        result = getNumber1() - getNumber2();
+        showResult(result);
     }
 
     function calcMult() {
-        let x = prompt('Число 1', ''),
-            y = prompt('Число 2', '');
-        alert(`Результат умножения: ${x} * ${y} = ${Number(x) * Number(y)}`);
+        result = getNumber1() * getNumber2();
+        showResult(result);
     }
 
     function calcDiv() {
-        let x = prompt('Число 1', ''),
-            y = prompt('Число 2', '');
-        if (y == 0) {
-            alert('На ноль делить нельзя!')
+        if (getNumber2() == 0) {
+            result = 'На ноль делить нельзя!'
         } else {
-            alert(`Результат деления: ${x} / ${y} = ${Number(x) / Number(y)}`);
+            result = getNumber1() / getNumber2();
         }
+        showResult(result);
     }
 
 </script>
