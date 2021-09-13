@@ -55,12 +55,12 @@
                 <div class="lesson__desc">
                     <h2 class="lesson__title">Калькулятор</h2>
                     <div class="lesson__task">
-                        (Сделайте простой калькулятор на 4 действия (сложение, вычитание, деление, умножение). 4 кнопки,
+                        <p>(Сделайте простой калькулятор на 4 действия (сложение, вычитание, деление, умножение). 4 кнопки,
                         по нажатию которые запрашиваются два числа и выдается результат их вычисления, соответствующий
-                        действию на кнопке.)
+                            действию на кнопке.)</p>
 
-                        Перепишите домашнее задание прошлой недели c помощью input для ввода данных и div (либо input)
-                        для вывода результата
+                        <p>Перепишите домашнее задание прошлой недели c помощью input для ввода данных и div (либо input)
+                            для вывода результата</p>
                     </div>
                 </div>
                 <div class="lesson__solution">
@@ -68,11 +68,11 @@
                         <div class="calculator__data">
                             <label class="calculator__label">
                                 <span class="calculator__text">Введите первое число:</span>
-                                <input type="text" class="calculator__input form__input" placeholder="Введите первое число">
+                                <input id="number1" onclick="getNumber1()" type="text" class="calculator__input form__input" placeholder="Введите первое число">
                             </label>
                             <label class="calculator__label">
                                 <span class="calculator__text">Введите второе число:</span>
-                                <input type="text" class="calculator__input form__input" placeholder="Введите второе число">
+                                <input id="number2" onclick="getNumber2()"  type="text" class="calculator__input form__input" placeholder="Введите второе число">
                             </label>
                             <div class="calculator__result-wrap">
                                 <span class="calculator__text">Результат:</span>
@@ -176,6 +176,24 @@
     </div>
 </footer>
 <script>
+
+    let number1 = +document.getElementById('number1');
+    let number2 = +document.getElementById('number2');
+    console.log(number1);
+    console.log(number2);
+
+    function getNumber1() {
+        let number1 = document.getElementById('number1')[0];
+        console.log(number2);
+        return number1;
+    }
+    //
+    // function getNumber2() {
+    //     let number2 = document.getElementById('number2')[0];
+    //     return number2;
+    // }
+    //
+
 
     //калькулятор
     function calcSum() {

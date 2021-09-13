@@ -62,11 +62,9 @@
                 <div class="lesson__solution">
                     <div class="gallery">
                         <div class="gallery__wrap">
-                            <div class="gallery__item gallery__item_active">
-                                <img src="../../assets/images/gallery/pic1.jpg" alt="flower">
-                            </div>
+<!--                            gallery__item_active-->
                             <div class="gallery__item">
-                                <img src="../../assets/images/gallery/pic2.jpg" alt="flower">
+                                <img src="../../assets/images/gallery/pic1.jpg" alt="flower">
                             </div>
                             <div class="gallery__item">
                                 <img src="../../assets/images/gallery/pic3.jpg" alt="flower">
@@ -167,27 +165,28 @@
     </div>
 </footer>
 <script>
-
-    // elem.style.background = 'red';
-    // document.getElementsByTagName('input')[0].value = 5;
-
-
-
-    //получаем все слайды
     let slides = document.getElementsByClassName("gallery__item");
+    let slide1 = slides[0],
+        slide2 = slides[1],
+        slide3 = slides[2];
+
+
+    let currentSlide = slide1;
+    showSlide(0);
+
+    function showSlide(i) {
+        currentSlide = slides[i];
+        currentSlide.style.display = 'block';
+    }
 
     function changeSlidePrev() {
-        console.log(slides);
-
-        // let slidesCount = slides.length;
-        // console.log(slidesCount);
-        // let slide = slides[0].value = 1;
-        // console.log(slide);
-
+        currentSlide = slide2;
+        showSlide(1);
     }
 
     function changeSlideNext() {
-
+        currentSlide = slide3;
+        showSlide(2);
     }
 </script>
 
