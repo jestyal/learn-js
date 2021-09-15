@@ -1,0 +1,10 @@
+.theme__wrap {
+    width: 50%;
+    height: 400px;
+    padding: 20px 30px;
+    border-radius: 3px;
+    border: 1px solid var(--color-grey);
+}
+.theme__wrap h2{
+    margin-bottom: 20px;
+}

@@ -10,10 +10,9 @@
     <link href="../../assets/styles/styles.css" rel="stylesheet">
     <link href="../../assets/styles/blocks/lessons.css" rel="stylesheet">
     <link href="../../assets/styles/blocks/form.css" rel="stylesheet">
-    <link href="../../assets/styles/blocks/theme.css" rel="stylesheet">
-
-    <link rel="shortcut icon" href="/assets/images/favicons/theme.svg" type="image/svg">
-    <title>Theme</title>
+    <link href="../../assets/styles/blocks/calculator.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/favicons/calculator.svg" type="image/svg">
+    <title>Calculator</title>
 </head>
 <body>
 <header class="header">
@@ -55,24 +54,53 @@
         <div class="lesson">
             <div class="lesson__item">
                 <div class="lesson__desc">
-                    <h2 class="lesson__title">Выбор темы оформления</h2>
+                    <h2 class="lesson__title">Калькулятор</h2>
                     <div class="lesson__task">
-                        Сделайте страничку с возможность выбора темы из выпадающего списка (например, темная, белая, синяя). После выбора темы меняйте фон документа согласно выбранному цвету.
+                        <p>(Сделайте простой калькулятор на 4 действия (сложение, вычитание, деление, умножение). 4
+                            кнопки,
+                            по нажатию которые запрашиваются два числа и выдается результат их вычисления,
+                            соответствующий
+                            действию на кнопке.)</p>
+
+                        <p>(Перепишите домашнее задание прошлой недели c помощью input для ввода данных и div (либо
+                            input) для вывода результата.)</p>
+
+                        <p>Доработайте калькулятор из прошлых заданий, выдавая сообщение "На ноль делить нельзя!" пользователю, если он пытается поделить на 0. </p>
+
+                        <p>+заполнены ли обы инпута</p>
                     </div>
                 </div>
                 <div class="lesson__solution">
-                    <div class="theme__wrap">
-                        <h2>Этот блок может поменять оформление</h2>
-                        <form id="theme-form" action="" class="form">
-                            <div class="form__item">
-                                <label for="theme-select" class="form__label">Выберите тему оформления:</label>
-                                <select id="theme-select" name="theme-select" class="form__select">
-                                    <option value="value1" selected>Значение 1</option>
-                                    <option value="value2">Значение 2</option>
-                                    <option value="value3">Значение 3</option>
-                                </select>
+                    <div class="calculator">
+                        <div class="calculator__data">
+                            <label class="calculator__label">
+                                <span class="calculator__text">Введите первое число:</span>
+                                <input id="number1" onchange="getNumber1()" type="text"
+                                       class="calculator__input form__input" placeholder="Введите первое число">
+                            </label>
+                            <label class="calculator__label">
+                                <span class="calculator__text">Введите второе число:</span>
+                                <input id="number2" onchange="getNumber2()" type="text"
+                                       class="calculator__input form__input" placeholder="Введите второе число">
+                            </label>
+                            <div class="calculator__result-wrap">
+                                <span class="calculator__text">Результат:</span>
+                                <span id="calculator__result" class="calculator__result"></span>
                             </div>
-                        </form>
+                        </div>
+
+                        <div class="calculator__item">
+                            <button class="btn calculator__btn" onclick="calcSum()">Сложение</button>
+                        </div>
+                        <div class="calculator__item">
+                            <button class="btn calculator__btn" onclick="calcDiff()">Вычитание</button>
+                        </div>
+                        <div class="calculator__item">
+                            <button class="btn calculator__btn" onclick="calcMult()">Умножение</button>
+                        </div>
+                        <div class="calculator__item">
+                            <button class="btn calculator__btn" onclick="calcDiv()">Деление</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -145,9 +173,11 @@
             </a>
         </div>
         <div class="copyright">
-            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons" target="_blank"
+            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons"
+                                  target="_blank"
                                   rel="noopener nofollow">Flat
-                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect" target="_blank"
+                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect"
+                              target="_blank"
                               rel="noopener nofollow">Pixel
                 perfect</a> from <a href="https://www.flaticon.com/ru/" title="Flaticon" target="_blank"
                                     rel="noopener nofollow">www.flaticon.com</a></div>
@@ -155,6 +185,47 @@
     </div>
 </footer>
 <script>
+    function getNumber1() {
+        let number1 = +document.getElementById('number1').value;
+        return number1;
+    }
+
+    function getNumber2() {
+        let number2 = +document.getElementById('number2').value;
+        return number2;
+    }
+
+    let result = 0;
+
+    showResult();
+    function showResult() {
+        let resultDiv = document.getElementById("calculator__result");
+        resultDiv.innerHTML = result;
+    }
+
+    function calcSum() {
+        result = getNumber1() + getNumber2();
+        showResult(result);
+    }
+
+    function calcDiff() {
+        result = getNumber1() - getNumber2();
+        showResult(result);
+    }
+
+    function calcMult() {
+        result = getNumber1() * getNumber2();
+        showResult(result);
+    }
+
+    function calcDiv() {
+        if (getNumber2() == 0) {
+            result = 'На ноль делить нельзя!'
+        } else {
+            result = getNumber1() / getNumber2();
+        }
+        showResult(result);
+    }
 
 </script>
 
