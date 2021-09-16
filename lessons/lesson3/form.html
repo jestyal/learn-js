@@ -68,42 +68,45 @@
                             <h2 class="form__title">Регистрация</h2>
                             <span class="form__desc">Зарегистрируйтесь, чтобы смотреть фото и видео ваших друзей.</span>
                         </div>
-                        <form id="registration-form" action="" class="form">
+                        <form id="registration-form" action="" class="form" onsubmit="return false">
                             <div class="form__item">
                                 <label class="form__label">
-                                    <input type="text" class="form__input" placeholder="Имя" required>
+                                    <input id="name" type="text" class="form__input" placeholder="Имя" required>
                                 </label>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
-                                    <input type="tel" class="form__input" placeholder="Телефон" required>
+                                    <input id="phone" type="tel" class="form__input" placeholder="Телефон" required>
                                 </label>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
-                                    <input type="email" class="form__input" placeholder="Email" required>
+                                    <input id="email" type="email" class="form__input" placeholder="Email" required>
                                 </label>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
-                                    <input type="date" class="form__input" placeholder="Дата рождения" required>
+                                    <input id="birthday" type="date" class="form__input" placeholder="Дата рождения"
+                                           required>
                                 </label>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
-                                    <input type="password" class="form__input" placeholder="Пароль" required>
+                                    <input id="password" type="password" class="form__input" placeholder="Пароль"
+                                           required>
                                 </label>
                             </div>
                             <div class="form__msg">
-                                <div class="msg msg-error"></div>
-                                <div class="msg msg-success"></div>
+                                <div id="msg-error" class="msg msg-error"></div>
+                                <div id="msg-success" class="msg msg-success"></div>
                             </div>
 
                             <div class="policy__wrap">
                                 <input id="policy-check" type="checkbox" class="checkbox" required>
-                                <label for="policy-check">Регистрируясь, вы принимаете наши Условия, Политику использования данных и Политику в отношении файлов cookie.</label>
+                                <label for="policy-check">Регистрируясь, вы принимаете наши Условия, Политику
+                                    использования данных и Политику в отношении файлов cookie.</label>
                             </div>
-                            <input type="submit" class="btn form__btn" value="Регистрация">
+                            <input type="submit" class="btn form__btn" value="Регистрация" onclick="validateInput()">
                         </form>
                     </div>
                 </div>
@@ -189,8 +192,47 @@
     </div>
 </footer>
 <script>
-    let errorMsg = document.getElementById('form__msg form__msg_error')
+    let errorMsg = document.getElementById('msg-error');
+    let successMsg = document.getElementById('msg-success');
+
+    let name = document.getElementById('name'),
+        phone = document.getElementById('phone'),
+        email = document.getElementById('email'),
+        birthday = document.getElementById('birthday'),
+        password = document.getElementById('password'),
+        policyCheckbox = document.getElementById('policy-check');
+
     function validateInput() {
+        errorMsg.innerHTML = '';
+        successMsg.innerHTML = '';
+
+        if(name.value == '') {
+            errorMsg.innerHTML += `Ваше имя не заполнено<br>`;
+        }
+
+        if(phone.value == '') {
+            errorMsg.innerHTML += `Ваш телефон не заполнен<br>`;
+        }
+
+        if(email.value == '') {
+            errorMsg.innerHTML += `Ваш email не заполнен<br>`;
+        }
+
+        if(birthday.value == '') {
+            errorMsg.innerHTML += `Ваш день рождения не заполнен<br>`;
+        }
+
+        if(password.value.length <= 7) {
+            errorMsg.innerHTML += `Ваш пароль слишком короткий<br>`;
+        }
+
+        if(!policyCheckbox.checked) {
+            errorMsg.innerHTML += `Примите политику использования данных<br>`;
+        }
+
+        if(name.value != '' && phone.value != '' && email.value != '' && birthday.value != '' && password.value != '' && policyCheckbox.checked) {
+            successMsg.innerHTML += `Добро пожаловать, ${name.value}!`;
+        }
 
     }
 </script>
