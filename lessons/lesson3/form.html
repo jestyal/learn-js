@@ -73,32 +73,32 @@
                                 <label class="form__label">
                                     <input type="text" class="form__input" placeholder="Имя" required>
                                 </label>
-                                <div class="form__msg"></div>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
                                     <input type="tel" class="form__input" placeholder="Телефон" required>
                                 </label>
-                                <div class="form__msg"></div>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
                                     <input type="email" class="form__input" placeholder="Email" required>
                                 </label>
-                                <div class="form__msg"></div>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
                                     <input type="date" class="form__input" placeholder="Дата рождения" required>
                                 </label>
-                                <div class="form__msg"></div>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
                                     <input type="password" class="form__input" placeholder="Пароль" required>
                                 </label>
-                                <div class="form__msg"></div>
                             </div>
+                            <div class="form__msg">
+                                <div class="msg msg-error"></div>
+                                <div class="msg msg-success"></div>
+                            </div>
+
                             <div class="policy__wrap">
                                 <input id="policy-check" type="checkbox" class="checkbox" required>
                                 <label for="policy-check">Регистрируясь, вы принимаете наши Условия, Политику использования данных и Политику в отношении файлов cookie.</label>
@@ -189,7 +189,10 @@
     </div>
 </footer>
 <script>
+    let errorMsg = document.getElementById('form__msg form__msg_error')
+    function validateInput() {
 
+    }
 </script>
 
 </body>

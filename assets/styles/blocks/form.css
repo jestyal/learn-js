@@ -53,3 +53,16 @@
     margin-bottom: 15px;
     font-size: 14px;
 }
+.form__msg {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+.msg {
+
+}
+.msg-error {
+    color: var(--color-pink);
+}
+.msg-success {
+    color: var(--color-green);
+}
