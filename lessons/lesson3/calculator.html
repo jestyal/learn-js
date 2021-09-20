@@ -66,8 +66,6 @@
                             input) для вывода результата.)</p>
 
                         <p>Доработайте калькулятор из прошлых заданий, выдавая сообщение "На ноль делить нельзя!" пользователю, если он пытается поделить на 0. </p>
-
-                        <p>+заполнены ли обы инпута</p>
                     </div>
                 </div>
                 <div class="lesson__solution">
@@ -186,13 +184,11 @@
 </footer>
 <script>
     function getNumber1() {
-        let number1 = +document.getElementById('number1').value;
-        return number1;
+        return +document.getElementById('number1').value;
     }
 
     function getNumber2() {
-        let number2 = +document.getElementById('number2').value;
-        return number2;
+        return +document.getElementById('number2').value;
     }
 
     let result = 0;
@@ -219,7 +215,7 @@
     }
 
     function calcDiv() {
-        if (getNumber2() == 0) {
+        if (getNumber2() === 0) {
             result = 'На ноль делить нельзя!'
         } else {
             result = getNumber1() / getNumber2();

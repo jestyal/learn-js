@@ -159,18 +159,23 @@
 <script>
     let themeWrap = document.getElementById('theme__wrap');
     let themeSelect = document.getElementById('theme-select');
+    let white = '#ffffff',
+        blue = '#6dc9f7',
+        violet = '#a582e0',
+        green = '#92e892',
+        yellow = '#fff490';
 
     function changeTheme() {
-        if (themeSelect.value == 'theme-blue') {
-            themeWrap.style.backgroundColor = '#6dc9f7';
-        } else if (themeSelect.value == 'theme-violet') {
-            themeWrap.style.backgroundColor = '#a582e0';
-        } else if (themeSelect.value == 'theme-green') {
-            themeWrap.style.backgroundColor = '#92e892';
-        } else if (themeSelect.value == 'theme-yellow') {
-            themeWrap.style.backgroundColor = '#fff490';
+        if (themeSelect.value === 'theme-blue') {
+            themeWrap.style.backgroundColor = blue;
+        } else if (themeSelect.value === 'theme-violet') {
+            themeWrap.style.backgroundColor = violet;
+        } else if (themeSelect.value === 'theme-green') {
+            themeWrap.style.backgroundColor = green;
+        } else if (themeSelect.value === 'theme-yellow') {
+            themeWrap.style.backgroundColor = yellow;
         } else {
-            themeWrap.style.backgroundColor = '#ffffff';
+            themeWrap.style.backgroundColor = white;
         }
     }
 </script>
