@@ -3,6 +3,9 @@
     height: calc(100vh - 160px);
     padding: 20px 0;
 }
+.lesson__wrap_full {
+    height: 100%;
+}
 
 .lesson__list {
     margin-bottom: 30px;

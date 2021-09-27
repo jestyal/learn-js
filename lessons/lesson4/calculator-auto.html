@@ -7,10 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="assets/styles/styles.css" rel="stylesheet">
-    <link href="assets/styles/blocks/lessons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/favicons/java-script.svg" type="image/svg">
-    <title>JavaScript lessons</title>
+    <link href="../../assets/styles/styles.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/lessons.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/form.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/calculator.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/favicons/calculator.svg" type="image/svg">
+    <title>Calculator Auto</title>
 </head>
 <body>
 <header class="header">
@@ -47,28 +49,241 @@
         </div>
     </div>
 </header>
-<section class="lesson__wrap">
+<section class="lesson__wrap lesson__wrap_full">
     <div class="wrapper">
-        <h1 class="title">Lessons:</h1>
-        <div class="lesson__list">
-            <div class="lesson__link">
-                Lesson 1 - <a href="lessons/lesson1/calculator.html" class="">калькулятор</a>
+        <div class="lesson">
+            <div class="lesson__item">
+                <div class="lesson__desc">
+                    <h2 class="lesson__title">Калькулятор расчета стоимости автомобиля</h2>
+                    <div class="lesson__task">
+                        <p>Напишите калькулятор расчета стоимости автомобиля в зависимости от комплектации.</p>
+                        <p>- Должен содержать выпадающие списки, чекбоксы, радиокнопки</p>
+                        <p>- Выбор того или иного элемента должен влиять на результирующую цену (*подсказка - суммы
+                            опций и вариантов комплектации можно хранить в value соответствующих input-ов и option-ов, а
+                            потом просуммировать их в цикле*)</p>
+                    </div>
+                </div>
+                <div class="lesson__solution">
+                    <div class="calculator form__wrap">
+                        <form action="" class="form" method="post">
+                            <div class="form__item">
+                                <label class="form__label" for="calculator_raw_cost">Цена на аукционе, ¥</label>
+                                <input type="text" id="calculator_raw_cost" class="form__input">
+                            </div>
+
+                            <div class="form__item">
+                                <label class="form__label" for="calculator_auction">Аукцион</label>
+                                <select id="calculator_auction" class="form__select">
+                                    <option value="0" selected="selected">По умолчанию (¥22 000)</option>
+                                    <option value="352">ARAI BAYSIDE</option>
+                                    <option value="351">ARAI OYAMA</option>
+                                    <option value="350">ARAI OYAMA V/T</option>
+                                    <option value="349">ARAI SENDAI</option>
+                                    <option value="348">BAYAUC</option>
+                                    <option value="346">CAA CHUBU</option>
+                                    <option value="345">CAA GIFU</option>
+                                </select>
+                            </div>
+
+                            <!--                            <input type="hidden" id="calculator_port" name="calculator[port]" value="3">-->
+
+                            <div class="form__item">
+                                <label class="form__label">Тип услуги</label>
+                                <div class="form__radio-wrap" id="calculator_service_type">
+                                    <div class="form__radio">
+                                        <label for="calculator_service_type_0" class="form__label">
+                                            <input type="radio" class="input__radio" id="calculator_service_type_0"
+                                                   name="calculator[service_type]" value="cc_full" checked="checked">
+                                            Целый автомобиль
+                                        </label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_service_type_1" class="form__label">
+                                            <input type="radio" class="input__radio" id="calculator_service_type_1"
+                                                   name="calculator[service_type]" value="cc_cut">
+                                            Распил легковой
+                                        </label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_service_type_2" class="form__label">
+                                            <input type="radio" class="input__radio" id="calculator_service_type_2"
+                                                   name="calculator[service_type]" value="cc_cut_framed">
+                                            Распил рамный
+                                        </label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_service_type_3" class="form__label">
+                                            <input type="radio" class="input__radio" id="calculator_service_type_3"
+                                                   name="calculator[service_type]" value="cc_kit">
+                                            Конструктор легковой
+                                        </label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_service_type_4" class="form__label">
+                                            <input type="radio" class="input__radio" id="calculator_service_type_4"
+                                                   name="calculator[service_type]" value="cc_kit_framed">
+                                            Конструктор джип, м/а, европ. марки
+                                        </label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_service_type_5" class="form__label">
+                                            <input type="radio" class="input__radio" id="calculator_service_type_5"
+                                                   name="calculator[service_type]" value="cc_pallet">
+                                            Запчасти на палете
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form__item">
+                                <label for="calculator_fueltype" class="form__label">Тип топлива</label>
+                                <div id="calculator_fueltype" class="form__radio-wrap">
+                                    <div class="form__radio">
+                                        <label for="calculator_fueltype_0" class="form__label">
+                                            <input type="radio" class="input__radio"
+                                                   id="calculator_fueltype_0"
+                                                   name="calculator[fueltype]"
+                                                   value="petrol"
+                                                   checked="checked">
+                                            бензин (включая гибрид)</label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_fueltype_1" class="form__label">
+                                            <input type="radio" class="input__radio"
+                                                   id="calculator_fueltype_1"
+                                                   name="calculator[fueltype]"
+                                                   value="diesel">
+                                            дизельное топливо</label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_fueltype_2" class="form__label">
+                                            <input type="radio" class="input__radio"
+                                                   id="calculator_fueltype_2"
+                                                   name="calculator[fueltype]"
+                                                   value="electro">
+                                            электрический</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form__item">
+                                <label class="form__label" for="calculator_volume">Объем двигателя,
+                                    см<sup>3</sup></label>
+                                <input type="text" id="calculator_volume"
+                                       name="calculator[volume]"
+                                       class="form__input">
+                            </div>
+
+                            <div class="form__item">
+                                <label class="form__label" for="calculator_power">Мощность, л.с.</label>
+                                <input type="text" id="calculator_power"
+                                       name="calculator[power]"
+                                       class="form__input">
+                            </div>
+
+                            <div class="form__item">
+                                <label class="form__label">Возраст автомобиля</label>
+                                <div id="calculator_age_class" class="form__radio-wrap">
+                                    <div class="form__radio">
+                                        <label for="calculator_age_class_0" class="form__label">
+                                            <input type="radio" class="input__radio"
+                                                   id="calculator_age_class_0"
+                                                   name="calculator[age_class]"
+                                                   value="new">
+                                            Меньше 3 лет
+                                        </label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_age_class_1" class="form__label">
+                                            <input type="radio"
+                                                   class="input__radio"
+                                                   id="calculator_age_class_1"
+                                                   name="calculator[age_class]"
+                                                   value="used_s"
+                                                   checked="checked">
+                                            От 3 до 5 лет
+                                        </label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_age_class_2" class="form__label">
+                                            <input type="radio"
+                                                   class="input__radio"
+                                                   id="calculator_age_class_2"
+                                                   name="calculator[age_class]"
+                                                   value="used_e">
+                                            От 5 до 7 лет
+                                        </label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_age_class_3" class="form__label">
+                                            <input type="radio"
+                                                   class="input__radio"
+                                                   id="calculator_age_class_3"
+                                                   name="calculator[age_class]"
+                                                   value="old">
+                                            Больше 7 лет
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form__item">
+                                <label class="form__label">Получатель</label>
+                                <div id="calculator_importer" class="form__radio-wrap">
+                                    <div class="form__radio">
+                                        <label for="calculator_importer_0" class="form__label">
+                                            <input type="radio" class="input__radio"
+                                                   id="calculator_importer_0"
+                                                   name="calculator[importer]"
+                                                   value="p"
+                                                   checked="checked">
+                                            Физическое лицо
+                                        </label>
+                                    </div>
+                                    <div class="form__radio">
+                                        <label for="calculator_importer_1" class="form__label">
+                                            <input type="radio" class="input__radio"
+                                                   id="calculator_importer_1"
+                                                   name="calculator[importer]"
+                                                   value="l"
+                                                   disabled="">
+                                            Юридическое лицо
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+<!--                            <div class="form__item">-->
+<!--                                <label class="form__label" for="calculator_declared_cost">Таможенная стоимость, $</label>-->
+<!--                                <div class="col-sm-13">-->
+<!--                                    <div class="input-group"><input type="text"-->
+<!--                                                                    id="calculator_declared_cost"-->
+<!--                                                                    name="calculator[declared_cost]"-->
+<!--                                                                    class="form-control"><span-->
+<!--                                            class="input-group-btn">-->
+<!--                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"-->
+<!--                            data-target="#clearancemodel_grid_modal">-->
+<!--                      <i class="fa fa-th"></i>-->
+<!--                    </button>-->
+<!--                </span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+                            <div class="form__item">
+                                <button type="submit" class="btn form__btn">Рассчитать</button>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
             </div>
-            <div class="lesson__link">
-                Lesson 2 - <a href="lessons/lesson2/calculator.html" class="">калькулятор</a>, <a href="lessons/lesson2/background.html" class="">фон</a>, <a href="lessons/lesson2/gallery.html" class="">галерея</a>
-            </div>
-            <div class="lesson__link">
-                Lesson 3 - <a href="lessons/lesson3/calculator.html" class="">калькулятор</a>, <a href="lessons/lesson3/form.html" class="">форма регистрации</a>, <a href="lessons/lesson3/theme.html" class="">выбор темы оформления</a>
-            </div>
-            <div class="lesson__link">
-                Lesson 4 - <a href="lessons/lesson4/array.html" class="">массивы</a>, <a href="lessons/lesson4/calculator-auto.html" class="">расчет стоимости авто</a>
-            </div>
-<!--            <div class="lesson__link">-->
-<!--                Lesson 5-->
-<!--            </div>-->
         </div>
     </div>
 </section>
+
 <footer class="footer">
     <div class="wrapper footer__wrap">
         <div class="logo">
@@ -134,14 +349,17 @@
             </a>
         </div>
         <div class="copyright">
-            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons" target="_blank"
+            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons"
+                                  target="_blank"
                                   rel="noopener nofollow">Flat
-                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect" target="_blank"
+                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect"
+                              target="_blank"
                               rel="noopener nofollow">Pixel
                 perfect</a> from <a href="https://www.flaticon.com/ru/" title="Flaticon" target="_blank"
                                     rel="noopener nofollow">www.flaticon.com</a></div>
         </div>
     </div>
 </footer>
+<script src="js/calc.js"></script>
 </body>
 </html>

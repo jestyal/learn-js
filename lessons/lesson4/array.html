@@ -7,10 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="assets/styles/styles.css" rel="stylesheet">
-    <link href="assets/styles/blocks/lessons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/favicons/java-script.svg" type="image/svg">
-    <title>JavaScript lessons</title>
+    <link href="../../assets/styles/styles.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/lessons.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/form.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/calculator.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/favicons/calculator.svg" type="image/svg">
+    <title>Array</title>
 </head>
 <body>
 <header class="header">
@@ -49,26 +51,26 @@
 </header>
 <section class="lesson__wrap">
     <div class="wrapper">
-        <h1 class="title">Lessons:</h1>
-        <div class="lesson__list">
-            <div class="lesson__link">
-                Lesson 1 - <a href="lessons/lesson1/calculator.html" class="">калькулятор</a>
+        <div class="lesson">
+            <div class="lesson__item">
+                <div class="lesson__desc">
+                    <h2 class="lesson__title">Использование массивов</h2>
+                    <div class="lesson__task">
+                        <p>Напишите функцию sumInput(), которая:</p>
+                        <p>- Просит пользователя ввести значения, используя prompt и сохраняет их в массив</p>
+                        <p>- Заканчивает запрашивать значения, когда пользователь введёт не числовое значение, пустую строку или нажмёт «Отмена»</p>
+                        <p>- Выводит получившийся массив в отсортированном по возрастанию виде</p>
+                        <p>- Подсчитывает и возвращает сумму элементов массива</p>
+                    </div>
+                </div>
+                <div class="lesson__solution">
+                    <button class="btn" onclick="alert(sumInput())">Введите число</button>
+                </div>
             </div>
-            <div class="lesson__link">
-                Lesson 2 - <a href="lessons/lesson2/calculator.html" class="">калькулятор</a>, <a href="lessons/lesson2/background.html" class="">фон</a>, <a href="lessons/lesson2/gallery.html" class="">галерея</a>
-            </div>
-            <div class="lesson__link">
-                Lesson 3 - <a href="lessons/lesson3/calculator.html" class="">калькулятор</a>, <a href="lessons/lesson3/form.html" class="">форма регистрации</a>, <a href="lessons/lesson3/theme.html" class="">выбор темы оформления</a>
-            </div>
-            <div class="lesson__link">
-                Lesson 4 - <a href="lessons/lesson4/array.html" class="">массивы</a>, <a href="lessons/lesson4/calculator-auto.html" class="">расчет стоимости авто</a>
-            </div>
-<!--            <div class="lesson__link">-->
-<!--                Lesson 5-->
-<!--            </div>-->
         </div>
     </div>
 </section>
+
 <footer class="footer">
     <div class="wrapper footer__wrap">
         <div class="logo">
@@ -134,14 +136,17 @@
             </a>
         </div>
         <div class="copyright">
-            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons" target="_blank"
+            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons"
+                                  target="_blank"
                                   rel="noopener nofollow">Flat
-                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect" target="_blank"
+                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect"
+                              target="_blank"
                               rel="noopener nofollow">Pixel
                 perfect</a> from <a href="https://www.flaticon.com/ru/" title="Flaticon" target="_blank"
                                     rel="noopener nofollow">www.flaticon.com</a></div>
         </div>
     </div>
 </footer>
+<script src="js/array.js"></script>
 </body>
 </html>
