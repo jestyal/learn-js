@@ -57,24 +57,29 @@
                     <h2 class="lesson__title">Калькулятор расчета стоимости автомобиля</h2>
                     <div class="lesson__task">
                         <p>Напишите калькулятор расчета стоимости автомобиля в зависимости от комплектации. <br>
-                        - Должен содержать выпадающие списки, чекбоксы, радиокнопки. <br>
-                        - Выбор того или иного элемента должен влиять на результирующую цену <small>(подсказка - суммы
-                            опций и вариантов комплектации можно хранить в value соответствующих input-ов и option-ов, а
-                            потом просуммировать их в цикле)</small>></p>
+                            - Должен содержать выпадающие списки, чекбоксы, радиокнопки. <br>
+                            - Выбор того или иного элемента должен влиять на результирующую цену <small>(подсказка -
+                                суммы
+                                опций и вариантов комплектации можно хранить в value соответствующих input-ов и
+                                option-ов, а
+                                потом просуммировать их в цикле)</small>></p>
                     </div>
                 </div>
                 <div class="lesson__solution">
                     <div class="calculator form__wrap">
-                        <form action="" class="form" method="post">
+                        <form action="" class="form" id="calculate-form" method="post">
                             <div class="form__item">
-                                <label class="form__label" for="calculator_raw_cost">Цена на аукционе, ¥</label>
+                                <label class="form__label form__label_bold" for="calculator_raw_cost">Цена на аукционе, руб.</label>
                                 <input type="text" id="calculator_raw_cost" class="form__input">
+                                <div class="form__msg">
+                                    <div id="msg-error_raw_cost" class="msg msg-error">Заполните поле</div>
+                                </div>
                             </div>
 
                             <div class="form__item">
-                                <label class="form__label" for="calculator_auction">Аукцион</label>
+                                <label class="form__label form__label_bold" for="calculator_auction">Аукцион</label>
                                 <select id="calculator_auction" class="form__select">
-                                    <option value="0" selected="selected">По умолчанию (¥22 000)</option>
+                                    <option value="0" selected="selected">По умолчанию (22 000 руб.)</option>
                                     <option value="352">ARAI BAYSIDE</option>
                                     <option value="351">ARAI OYAMA</option>
                                     <option value="350">ARAI OYAMA V/T</option>
@@ -83,12 +88,13 @@
                                     <option value="346">CAA CHUBU</option>
                                     <option value="345">CAA GIFU</option>
                                 </select>
+                                <div class="form__msg">
+                                    <div id="msg-error_auction" class="msg msg-error">Выберите аукцион</div>
+                                </div>
                             </div>
 
-                            <!--                            <input type="hidden" id="calculator_port" name="calculator[port]" value="3">-->
-
                             <div class="form__item">
-                                <label class="form__label">Тип услуги</label>
+                                <label class="form__label form__label_bold">Тип услуги</label>
                                 <div class="form__radio-wrap" id="calculator_service_type">
                                     <div class="form__radio">
                                         <label for="calculator_service_type_0" class="form__label">
@@ -133,58 +139,70 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="form__msg">
+                                    <div id="msg-error_service_type" class="msg msg-error">Выберите тип услуги</div>
+                                </div>
                             </div>
 
+                            <div class="form__group">
+                                <div class="form__item">
+                                    <label for="calculator_fueltype" class="form__label form__label_bold">Тип топлива</label>
+                                    <div id="calculator_fueltype" class="form__radio-wrap">
+                                        <div class="form__radio">
+                                            <label for="calculator_fueltype_0" class="form__label">
+                                                <input type="radio" class="input__radio"
+                                                       id="calculator_fueltype_0"
+                                                       name="calculator[fueltype]"
+                                                       value="petrol"
+                                                       checked="checked">
+                                                бензин (включая гибрид)</label>
+                                        </div>
+                                        <div class="form__radio">
+                                            <label for="calculator_fueltype_1" class="form__label">
+                                                <input type="radio" class="input__radio"
+                                                       id="calculator_fueltype_1"
+                                                       name="calculator[fueltype]"
+                                                       value="diesel">
+                                                дизельное топливо</label>
+                                        </div>
+                                        <div class="form__radio">
+                                            <label for="calculator_fueltype_2" class="form__label">
+                                                <input type="radio" class="input__radio"
+                                                       id="calculator_fueltype_2"
+                                                       name="calculator[fueltype]"
+                                                       value="electro">
+                                                электрический</label>
+                                        </div>
+                                    </div>
+                                    <div class="form__msg">
+                                        <div id="msg-error_fuel_type" class="msg msg-error">Выберите тип топлива</div>
+                                    </div>
+                                </div>
 
-                            <div class="form__item">
-                                <label for="calculator_fueltype" class="form__label">Тип топлива</label>
-                                <div id="calculator_fueltype" class="form__radio-wrap">
-                                    <div class="form__radio">
-                                        <label for="calculator_fueltype_0" class="form__label">
-                                            <input type="radio" class="input__radio"
-                                                   id="calculator_fueltype_0"
-                                                   name="calculator[fueltype]"
-                                                   value="petrol"
-                                                   checked="checked">
-                                            бензин (включая гибрид)</label>
+                                <div class="form__item">
+                                    <label class="form__label form__label_bold" for="calculator_volume">Объем двигателя,
+                                        см<sup>3</sup></label>
+                                    <input type="text" id="calculator_volume"
+                                           name="calculator[volume]"
+                                           class="form__input">
+                                    <div class="form__msg">
+                                        <div id="msg-error_volume" class="msg msg-error">Заполните поле</div>
                                     </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_fueltype_1" class="form__label">
-                                            <input type="radio" class="input__radio"
-                                                   id="calculator_fueltype_1"
-                                                   name="calculator[fueltype]"
-                                                   value="diesel">
-                                            дизельное топливо</label>
-                                    </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_fueltype_2" class="form__label">
-                                            <input type="radio" class="input__radio"
-                                                   id="calculator_fueltype_2"
-                                                   name="calculator[fueltype]"
-                                                   value="electro">
-                                            электрический</label>
+                                </div>
+
+                                <div class="form__item">
+                                    <label class="form__label form__label_bold" for="calculator_power">Мощность, л.с.</label>
+                                    <input type="text" id="calculator_power"
+                                           name="calculator[power]"
+                                           class="form__input">
+                                    <div class="form__msg">
+                                        <div id="msg-error_power" class="msg msg-error">Заполните поле</div>
                                     </div>
                                 </div>
                             </div>
 
-
                             <div class="form__item">
-                                <label class="form__label" for="calculator_volume">Объем двигателя,
-                                    см<sup>3</sup></label>
-                                <input type="text" id="calculator_volume"
-                                       name="calculator[volume]"
-                                       class="form__input">
-                            </div>
-
-                            <div class="form__item">
-                                <label class="form__label" for="calculator_power">Мощность, л.с.</label>
-                                <input type="text" id="calculator_power"
-                                       name="calculator[power]"
-                                       class="form__input">
-                            </div>
-
-                            <div class="form__item">
-                                <label class="form__label">Возраст автомобиля</label>
+                                <label class="form__label form__label_bold">Возраст автомобиля</label>
                                 <div id="calculator_age_class" class="form__radio-wrap">
                                     <div class="form__radio">
                                         <label for="calculator_age_class_0" class="form__label">
@@ -227,57 +245,61 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="form__msg">
+                                    <div id="msg-error_age_class" class="msg msg-error">Выберите возраст автомобиля</div>
+                                </div>
                             </div>
 
-                            <div class="form__item">
-                                <label class="form__label">Получатель</label>
-                                <div id="calculator_importer" class="form__radio-wrap">
-                                    <div class="form__radio">
-                                        <label for="calculator_importer_0" class="form__label">
-                                            <input type="radio" class="input__radio"
-                                                   id="calculator_importer_0"
-                                                   name="calculator[importer]"
-                                                   value="p"
-                                                   checked="checked">
-                                            Физическое лицо
-                                        </label>
+                            <div class="form__group">
+                                <div class="form__item">
+                                    <label class="form__label form__label_bold">Получатель</label>
+                                    <div id="calculator_importer" class="form__radio-wrap">
+                                        <div class="form__radio">
+                                            <label for="calculator_importer_0" class="form__label">
+                                                <input type="radio" class="input__radio"
+                                                       id="calculator_importer_0"
+                                                       name="calculator[importer]"
+                                                       value="individual"
+                                                       checked="checked">
+                                                Физическое лицо
+                                            </label>
+                                        </div>
+                                        <div class="form__radio">
+                                            <label for="calculator_importer_1" class="form__label">
+                                                <input type="radio" class="input__radio"
+                                                       id="calculator_importer_1"
+                                                       name="calculator[importer]"
+                                                       value="legal"
+                                                       disabled="">
+                                                Юридическое лицо
+                                            </label>
+                                        </div>
                                     </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_importer_1" class="form__label">
-                                            <input type="radio" class="input__radio"
-                                                   id="calculator_importer_1"
-                                                   name="calculator[importer]"
-                                                   value="l"
-                                                   disabled="">
-                                            Юридическое лицо
-                                        </label>
+                                    <div class="form__msg">
+                                        <div id="msg-error_importer" class="msg msg-error">Выберите получателя</div>
+                                    </div>
+                                </div>
+
+                                <div class="form__item" id="declared_cost">
+                                    <label class="form__label form__label_bold" for="calculator_declared_cost">Таможенная стоимость, руб.</label>
+                                    <input type="text" class="form__input"
+                                           id="calculator_declared_cost"
+                                           name="calculator[declared_cost]">
+                                    <div class="form__msg">
+                                        <div id="msg-error_declared_cost" class="msg msg-error">Заполните поле</div>
                                     </div>
                                 </div>
                             </div>
 
-<!--                            <div class="form__item">-->
-<!--                                <label class="form__label" for="calculator_declared_cost">Таможенная стоимость, $</label>-->
-<!--                                <div class="col-sm-13">-->
-<!--                                    <div class="input-group"><input type="text"-->
-<!--                                                                    id="calculator_declared_cost"-->
-<!--                                                                    name="calculator[declared_cost]"-->
-<!--                                                                    class="form-control"><span-->
-<!--                                            class="input-group-btn">-->
-<!--                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"-->
-<!--                            data-target="#clearancemodel_grid_modal">-->
-<!--                      <i class="fa fa-th"></i>-->
-<!--                    </button>-->
-<!--                </span>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
                             <div class="form__item">
-                                <button type="submit" class="btn form__btn">Рассчитать</button>
+                                <input type="submit" onsubmit="calcTotalCost()" class="btn form__btn" value="Рассчитать">
+                            </div>
+
+                            <div id="result" class="result">
+                                <span>0</span> руб.
                             </div>
                         </form>
                     </div>
-
-
                 </div>
             </div>
         </div>

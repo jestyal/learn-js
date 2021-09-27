@@ -17,11 +17,14 @@
     display: block;
 }
 .form__item {
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 .form__label {
     display: block;
     margin-bottom: 10px;
+}
+.form__label_bold {
+    font-weight: bolder;
 }
 .form__input {
     display: block;
@@ -32,7 +35,11 @@
     font-size: 14px;
 }
 .form__input:focus,
-.form__select:focus {
+.form__input:focus-visible,
+.form__select:focus,
+.form__select:focus-visible,
+.input__radio:focus,
+.input__radio:focus-visible {
     outline: 0;
     border-color: var(--color-navy);
 }
@@ -66,4 +73,17 @@
 }
 .msg-success {
     color: var(--color-green);
+}
+
+.input__radio {
+    cursor: pointer;
+}
+
+.result {
+    display: block;
+    padding: 20px 0;
+    border-top: 2px solid var(--color-light-grey);
+}
+.result span {
+    font-weight: bolder;
 }
