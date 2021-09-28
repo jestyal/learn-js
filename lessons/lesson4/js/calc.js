@@ -21,16 +21,6 @@ const auction = document.querySelector('#calculator_auction');
 const servicesBlock = document.querySelector("#services");
 servicesBlock.style.display = "none";
 
-
-// const a = {
-//     "auction1": {
-//         "Целый автомобиль": 100,
-//     },
-//     "auction2": {
-//         "Распил рамный": 100,
-//     },
-// }
-
 auction.addEventListener("change", (event) => {
     const servicesContainer = document.querySelector("#calculator_service_type");
     const services1 = ['Целый автомобиль', 'Распил легковой', 'Конструктор легковой'];
@@ -45,43 +35,41 @@ auction.addEventListener("change", (event) => {
     if(auctionType == 0) {
         servicesBlock.style.display = "none";
     } else if(auctionType == 1) {
-        servicesBlock.style.display = "block";
         createServices([...services1]);
     } else if(auctionType == 2) {
-        servicesBlock.style.display = "block";
         createServices([...services2]);
     }
 
     function createServices(auctionValues) {
+        servicesBlock.style.display = "block";
         for (let i = 0; i < auctionValues.length; i++) {
+
+            //прописываю цену конкретной услуге
+            let serviceCost = 0;
+            if(auctionType == 1 && i == 0) {
+                serviceCost = 100;
+            } else if(auctionType == 1 && i == 1) {
+                serviceCost = 200;
+            } else if(auctionType == 1 && i == 2) {
+                serviceCost = 300;
+            } else if(auctionType == 2 && i == 0) {
+                serviceCost = 400;
+            } else if(auctionType == 2 && i == 1) {
+                serviceCost = 500;
+            } else {
+                serviceCost = 1;
+            }
+
+            //создаю инпут с типом услуг
             let serviceTypeElement = document.createElement("div");
             serviceTypeElement.classList.add("form__radio");
-            serviceTypeElement.innerHTML = '<label class="form__label"><input type="radio" class="input__radio" name="service_type" value="' + [i] + '" /> ' + auctionValues[i] + '</label>';
+            serviceTypeElement.innerHTML = '<label class="form__label"><input type="radio" class="input__radio" name="service_type" value="' + serviceCost + '" /> ' + auctionValues[i] + '</label>';
             servicesContainer.append(serviceTypeElement);
 
 
             let radioServiceType = serviceTypeElement.querySelector("input");
             radioServiceType.addEventListener("change", (event) => {
                 const serviceTypeValue = radioServiceType.value;
-
-                //прописываю цену конкретной услуге
-                let serviceCost = 0;
-                if(auctionType == 1 && serviceTypeValue == 0) {
-                    serviceCost = 100;
-                } else if(auctionType == 1 && serviceTypeValue == 1) {
-                    serviceCost = 200;
-                } else if(auctionType == 1 && serviceTypeValue == 2) {
-                    serviceCost = 300;
-                } else if(auctionType == 2 && serviceTypeValue == 0) {
-                    serviceCost = 400;
-                } else if(auctionType == 2 && serviceTypeValue == 1) {
-                    serviceCost = 500;
-                } else {
-                    serviceCost = 1;
-                }
-
-                console.log(serviceCost)
-                // return serviceCost;
             });
         }
     }
@@ -94,46 +82,41 @@ engineVolumeBlock.style.display = "none";
 const enginePowerBlock = document.querySelector("#engine_power");
 enginePowerBlock.style.display = "none";
 
-
-
 const fuelTypeBlock = document.querySelector('#calculator_fuel_type');
 const fuelTypes = ['бензин (включая гибрид)', 'дизельное топливо', 'электрический'];
 
 
-
 function createFuelTypes () {
     for (let i = 0; i < fuelTypes.length; i++) {
+
+        //прописываю цену конкретному типу топлива
+        let fuelCost = 0;
+        if(i == 0) {
+            fuelCost = 2000;
+        } else if(i == 1) {
+            fuelCost = 3000;
+        } else if(i == 2) {
+            fuelCost = 1000;
+        } else {
+            fuelCost = 1;
+        }
+
+        //создаю инпуты с типами топлива
         let fuelTypeElement = document.createElement("div");
         fuelTypeElement.classList.add("form__radio");
-        fuelTypeElement.innerHTML = '<label class="form__label"><input type="radio" class="input__radio" name="fuel_type" value="' + [i] + '" /> ' + fuelTypes[i] + '</label>';
+        fuelTypeElement.innerHTML = '<label class="form__label"><input type="radio" class="input__radio" name="fuel_type" value="' + fuelCost + '" /> ' + fuelTypes[i] + '</label>';
 
         let radioFuelType = fuelTypeElement.querySelector("input");
         radioFuelType.addEventListener("change", (event) => {
             const fuelValue = radioFuelType.value;
             engineVolumeBlock.style.display = "none";
             enginePowerBlock.style.display = "none";
-            if(fuelValue == 0 || fuelValue == 1) {
+            if(fuelValue == 2000 || fuelValue == 3000) {
                 engineVolumeBlock.style.display = "block";
                 enginePowerBlock.style.display = "block";
-            } else if(fuelValue == 2) {
+            } else if(fuelValue == 1000) {
                 enginePowerBlock.style.display = "block";
             }
-
-
-            //прописываю цену конкретному типу топлива
-            let fuelCost = 0;
-            if(fuelValue == 0) {
-                fuelCost = 2000;
-            } else if(fuelValue == 1) {
-                fuelCost = 3000;
-            } else if(fuelValue == 2) {
-                fuelCost = 1000;
-            } else {
-                fuelCost = 1;
-            }
-            console.log(fuelCost)
-            // return fuelCost;
-
 
         })
 
@@ -158,9 +141,12 @@ form.addEventListener('submit', (event) => {
         enginePowerValue = +document.querySelector("#engine_power input").value;
 
 
-    totalCost = auctionPriceValue + engineVolumeValue + enginePowerValue;
+    let fuelValue = +document.querySelector('input[name="fuel_type"]:checked').value;
+    let serviceTypeValue = +document.querySelector('input[name="service_type"]:checked').value;
+
+    //формула придумана из головы
+    totalCost = auctionPriceValue + serviceTypeValue + fuelValue*engineVolumeValue + enginePowerValue*0.5;
     resultText.innerHTML = totalCost;
-    console.log(totalCost);
 })
 
 
