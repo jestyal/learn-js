@@ -70,8 +70,6 @@ const enginePowerBlock = document.querySelector("#engine_power");
 enginePowerBlock.style.display = "none";
 
 const fuelTypeBlock = document.querySelector('#calculator_fuel_type');
-fuelTypeBlock.innerHTML = "";
-
 const fuelTypes = ['бензин (включая гибрид)', 'дизельное топливо', 'электрический'];
 
 function createFuelTypes () {
@@ -83,6 +81,8 @@ function createFuelTypes () {
         let radioFuelType = fuelTypeElement.querySelector("input");
         radioFuelType.addEventListener("change", (event) => {
             const fuelValue = radioFuelType.value;
+            engineVolumeBlock.style.display = "none";
+            enginePowerBlock.style.display = "none";
             if(fuelValue == 0 || fuelValue == 1) {
                 engineVolumeBlock.style.display = "block";
                 enginePowerBlock.style.display = "block";
@@ -95,16 +95,8 @@ function createFuelTypes () {
     }
 }
 createFuelTypes ();
-//
-// fuelTypeBlock.addEventListener("change", (event) => {
-//     const fuelValue = fuelTypeBlock.value;
-//     if(fuelValue[0] || fuelValue[1]) {
-//         engineVolumeBlock.style.display = "block";
-//         enginePowerBlock.style.display = "block";
-//     } else if(fuelValue[2]) {
-//         enginePowerBlock.style.display = "block";
-//     }
-// })
+
+
 
 
 
