@@ -2,6 +2,8 @@ function sumInput() {
     let numbers = [];
 
     while (true) {
+        // let value = +prompt("Введите число:", 0);
+        // if (value === 0 || isNaN(value)) break;
         let value = prompt("Введите число:", 0);
         if (value === null || value === "" || !isFinite(value)) break;
         numbers.push(+value);

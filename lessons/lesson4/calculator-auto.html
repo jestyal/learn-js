@@ -80,106 +80,36 @@
                                 <label class="form__label form__label_bold" for="calculator_auction">Аукцион</label>
                                 <select id="calculator_auction" class="form__select">
                                     <option value="0" selected="selected">По умолчанию (22 000 руб.)</option>
-                                    <option value="352">ARAI BAYSIDE</option>
-                                    <option value="351">ARAI OYAMA</option>
-                                    <option value="350">ARAI OYAMA V/T</option>
-                                    <option value="349">ARAI SENDAI</option>
-                                    <option value="348">BAYAUC</option>
-                                    <option value="346">CAA CHUBU</option>
-                                    <option value="345">CAA GIFU</option>
+                                    <option value="1">Аукцион 1</option>
+                                    <option value="2">Аукцион 2</option>
                                 </select>
                                 <div class="form__msg">
                                     <div id="msg-error_auction" class="msg msg-error">Выберите аукцион</div>
                                 </div>
                             </div>
 
-                            <div class="form__item">
+                            <div id="services" class="form__item">
                                 <label class="form__label form__label_bold">Тип услуги</label>
-                                <div class="form__radio-wrap" id="calculator_service_type">
-                                    <div class="form__radio">
-                                        <label for="calculator_service_type_0" class="form__label">
-                                            <input type="radio" class="input__radio" id="calculator_service_type_0"
-                                                   name="calculator[service_type]" value="cc_full" checked="checked">
-                                            Целый автомобиль
-                                        </label>
-                                    </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_service_type_1" class="form__label">
-                                            <input type="radio" class="input__radio" id="calculator_service_type_1"
-                                                   name="calculator[service_type]" value="cc_cut">
-                                            Распил легковой
-                                        </label>
-                                    </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_service_type_2" class="form__label">
-                                            <input type="radio" class="input__radio" id="calculator_service_type_2"
-                                                   name="calculator[service_type]" value="cc_cut_framed">
-                                            Распил рамный
-                                        </label>
-                                    </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_service_type_3" class="form__label">
-                                            <input type="radio" class="input__radio" id="calculator_service_type_3"
-                                                   name="calculator[service_type]" value="cc_kit">
-                                            Конструктор легковой
-                                        </label>
-                                    </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_service_type_4" class="form__label">
-                                            <input type="radio" class="input__radio" id="calculator_service_type_4"
-                                                   name="calculator[service_type]" value="cc_kit_framed">
-                                            Конструктор джип, м/а, европ. марки
-                                        </label>
-                                    </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_service_type_5" class="form__label">
-                                            <input type="radio" class="input__radio" id="calculator_service_type_5"
-                                                   name="calculator[service_type]" value="cc_pallet">
-                                            Запчасти на палете
-                                        </label>
-                                    </div>
+                                <div id="calculator_service_type" class="form__radio-wrap">
+<!--                                    тут создаю блок из радио кнопок с типом услуг-->
                                 </div>
                                 <div class="form__msg">
                                     <div id="msg-error_service_type" class="msg msg-error">Выберите тип услуги</div>
                                 </div>
                             </div>
 
-                            <div class="form__group">
+                            <div id="fuel" class="form__group">
                                 <div class="form__item">
-                                    <label for="calculator_fueltype" class="form__label form__label_bold">Тип топлива</label>
-                                    <div id="calculator_fueltype" class="form__radio-wrap">
-                                        <div class="form__radio">
-                                            <label for="calculator_fueltype_0" class="form__label">
-                                                <input type="radio" class="input__radio"
-                                                       id="calculator_fueltype_0"
-                                                       name="calculator[fueltype]"
-                                                       value="petrol"
-                                                       checked="checked">
-                                                бензин (включая гибрид)</label>
-                                        </div>
-                                        <div class="form__radio">
-                                            <label for="calculator_fueltype_1" class="form__label">
-                                                <input type="radio" class="input__radio"
-                                                       id="calculator_fueltype_1"
-                                                       name="calculator[fueltype]"
-                                                       value="diesel">
-                                                дизельное топливо</label>
-                                        </div>
-                                        <div class="form__radio">
-                                            <label for="calculator_fueltype_2" class="form__label">
-                                                <input type="radio" class="input__radio"
-                                                       id="calculator_fueltype_2"
-                                                       name="calculator[fueltype]"
-                                                       value="electro">
-                                                электрический</label>
-                                        </div>
+                                    <label class="form__label form__label_bold">Тип топлива</label>
+                                    <div id="calculator_fuel_type" class="form__radio-wrap">
+<!--                                        тут создаю блок из радио кнопок с типом топлива-->
                                     </div>
                                     <div class="form__msg">
                                         <div id="msg-error_fuel_type" class="msg msg-error">Выберите тип топлива</div>
                                     </div>
                                 </div>
 
-                                <div class="form__item">
+                                <div id="engine_volume" class="form__item">
                                     <label class="form__label form__label_bold" for="calculator_volume">Объем двигателя,
                                         см<sup>3</sup></label>
                                     <input type="text" id="calculator_volume"
@@ -190,7 +120,7 @@
                                     </div>
                                 </div>
 
-                                <div class="form__item">
+                                <div id="engine_power" class="form__item">
                                     <label class="form__label form__label_bold" for="calculator_power">Мощность, л.с.</label>
                                     <input type="text" id="calculator_power"
                                            name="calculator[power]"
@@ -202,97 +132,7 @@
                             </div>
 
                             <div class="form__item">
-                                <label class="form__label form__label_bold">Возраст автомобиля</label>
-                                <div id="calculator_age_class" class="form__radio-wrap">
-                                    <div class="form__radio">
-                                        <label for="calculator_age_class_0" class="form__label">
-                                            <input type="radio" class="input__radio"
-                                                   id="calculator_age_class_0"
-                                                   name="calculator[age_class]"
-                                                   value="new">
-                                            Меньше 3 лет
-                                        </label>
-                                    </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_age_class_1" class="form__label">
-                                            <input type="radio"
-                                                   class="input__radio"
-                                                   id="calculator_age_class_1"
-                                                   name="calculator[age_class]"
-                                                   value="used_s"
-                                                   checked="checked">
-                                            От 3 до 5 лет
-                                        </label>
-                                    </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_age_class_2" class="form__label">
-                                            <input type="radio"
-                                                   class="input__radio"
-                                                   id="calculator_age_class_2"
-                                                   name="calculator[age_class]"
-                                                   value="used_e">
-                                            От 5 до 7 лет
-                                        </label>
-                                    </div>
-                                    <div class="form__radio">
-                                        <label for="calculator_age_class_3" class="form__label">
-                                            <input type="radio"
-                                                   class="input__radio"
-                                                   id="calculator_age_class_3"
-                                                   name="calculator[age_class]"
-                                                   value="old">
-                                            Больше 7 лет
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="form__msg">
-                                    <div id="msg-error_age_class" class="msg msg-error">Выберите возраст автомобиля</div>
-                                </div>
-                            </div>
-
-                            <div class="form__group">
-                                <div class="form__item">
-                                    <label class="form__label form__label_bold">Получатель</label>
-                                    <div id="calculator_importer" class="form__radio-wrap">
-                                        <div class="form__radio">
-                                            <label for="calculator_importer_0" class="form__label">
-                                                <input type="radio" class="input__radio"
-                                                       id="calculator_importer_0"
-                                                       name="calculator[importer]"
-                                                       value="individual"
-                                                       checked="checked">
-                                                Физическое лицо
-                                            </label>
-                                        </div>
-                                        <div class="form__radio">
-                                            <label for="calculator_importer_1" class="form__label">
-                                                <input type="radio" class="input__radio"
-                                                       id="calculator_importer_1"
-                                                       name="calculator[importer]"
-                                                       value="legal"
-                                                       disabled="">
-                                                Юридическое лицо
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="form__msg">
-                                        <div id="msg-error_importer" class="msg msg-error">Выберите получателя</div>
-                                    </div>
-                                </div>
-
-                                <div class="form__item" id="declared_cost">
-                                    <label class="form__label form__label_bold" for="calculator_declared_cost">Таможенная стоимость, руб.</label>
-                                    <input type="text" class="form__input"
-                                           id="calculator_declared_cost"
-                                           name="calculator[declared_cost]">
-                                    <div class="form__msg">
-                                        <div id="msg-error_declared_cost" class="msg msg-error">Заполните поле</div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form__item">
-                                <input type="submit" onsubmit="calcTotalCost()" class="btn form__btn" value="Рассчитать">
+                                <input id="calc_submit" type="submit" onsubmit="calcTotalCost()" class="btn form__btn" value="Рассчитать">
                             </div>
 
                             <div id="result" class="result">
