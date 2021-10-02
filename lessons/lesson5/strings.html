@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="../../assets/styles/styles.css" rel="stylesheet">
     <link href="../../assets/styles/blocks/lessons.css" rel="stylesheet">
-
+    <link href="../../assets/styles/blocks/form.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="../../assets/images/favicons/string.svg" type="image/svg">
     <title>Strings</title>
@@ -68,7 +68,11 @@
                     </div>
                 </div>
                 <div class="lesson__solution">
-
+                    <div class="form__wrap">
+                        <input id="fullName" type="text" class="form__input mb_20">
+                        <button class="btn mb_20" onclick="getSplitName()">Преобразовать</button>
+                        <div id="splitName"></div>
+                    </div>
                 </div>
             </div>
         </div>
