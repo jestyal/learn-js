@@ -7,10 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="assets/styles/styles.css" rel="stylesheet">
-    <link href="assets/styles/blocks/lessons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/favicons/java-script.svg" type="image/svg">
-    <title>JavaScript lessons</title>
+    <link href="../../assets/styles/styles.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/lessons.css" rel="stylesheet">
+
+
+    <link rel="shortcut icon" href="../../assets/images/favicons/string.svg" type="image/svg">
+    <title>Strings</title>
 </head>
 <body>
 <header class="header">
@@ -49,29 +51,30 @@
 </header>
 <section class="lesson__wrap">
     <div class="wrapper">
-        <h1 class="title">Lessons:</h1>
-        <div class="lesson__list">
-            <div class="lesson__link">
-                Lesson 1 - <a href="lessons/lesson1/calculator.html" class="">калькулятор</a>
+        <div class="lesson">
+            <div class="lesson__item">
+                <div class="lesson__desc">
+                    <h2 class="lesson__title">Работа со строками</h2>
+                    <div class="lesson__task lesson__task_full">
+                        <p>1. Сделайте интерфейс преобразования ФИО на три поля (input). Учтите, пожалуйста, все нюансы - лишние пробелы, отсутствие больших букв в именах и пр. <br>
+                            Например, было введено пользователем "   Цветкова алиса АлександровНА  ", а стало три поля:<br>
+                            Имя: Алиса, Фамилия: Цветкова, Отчество: Александровна</p>
+                        <p>2. Сделайте интерфейс для анонимных комментариев со спамфильтром. Необходимо реализовать отображение и добавление сообщений, а также функцию checkSpam(str), заменяющую 'viagra' или 'XXX' на ***<br>
+                            Функция должна быть нечувствительна к регистру:<br>
+                            let comment1 = checkSpam('buy ViAgRA now'); //результат buy *** now<br>
+                            let comment2 = checkSpam('free xxx'); //результат free ***<br>
+                            let comment3 = checkSpam("innocent rabbit") ; //результат innocent rabbit
+                        </p>
+                    </div>
+                </div>
+                <div class="lesson__solution">
+
+                </div>
             </div>
-            <div class="lesson__link">
-                Lesson 2 - <a href="lessons/lesson2/calculator.html" class="">калькулятор</a>, <a href="lessons/lesson2/background.html" class="">фон</a>, <a href="lessons/lesson2/gallery.html" class="">галерея</a>
-            </div>
-            <div class="lesson__link">
-                Lesson 3 - <a href="lessons/lesson3/calculator.html" class="">калькулятор</a>, <a href="lessons/lesson3/form.html" class="">форма регистрации</a>, <a href="lessons/lesson3/theme.html" class="">выбор темы оформления</a>
-            </div>
-            <div class="lesson__link">
-                Lesson 4 - <a href="lessons/lesson4/array.html" class="">массивы</a>, <a href="lessons/lesson4/calculator-auto.html" class="">расчет стоимости авто</a>
-            </div>
-            <div class="lesson__link">
-                Lesson 6 - <a href="lessons/lesson5/strings.html" class="">работа со строками</a>, <a href="lessons/lesson5/date.html" class="">датой</a> и <a href="lessons/lesson5/math.html" class="">математическими функциями</a>
-            </div>
-            <!--            <div class="lesson__link">-->
-            <!--                Lesson 5-->
-            <!--            </div>-->
         </div>
     </div>
 </section>
+
 <footer class="footer">
     <div class="wrapper footer__wrap">
         <div class="logo">
@@ -137,14 +140,17 @@
             </a>
         </div>
         <div class="copyright">
-            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons" target="_blank"
+            <div>Автор иконок: <a href="https://www.flaticon.com/ru/authors/flat-icons" title="Flat Icons"
+                                  target="_blank"
                                   rel="noopener nofollow">Flat
-                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect" target="_blank"
+                Icons</a>, <a href="https://www.flaticon.com/ru/authors/pixel-perfect" title="Pixel perfect"
+                              target="_blank"
                               rel="noopener nofollow">Pixel
                 perfect</a> from <a href="https://www.flaticon.com/ru/" title="Flaticon" target="_blank"
                                     rel="noopener nofollow">www.flaticon.com</a></div>
         </div>
     </div>
 </footer>
+<script src="js/strings.js"></script>
 </body>
 </html>

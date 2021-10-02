@@ -50,6 +50,10 @@
     margin-bottom: 20px;
 }
 
+.lesson__task_full {
+    max-width: 100%;
+}
+
 .lesson__task p:not(:last-of-type) {
     margin-bottom: 20px;
 }

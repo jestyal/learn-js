@@ -120,3 +120,10 @@ a:hover {
     height: 50px;
     margin: 0 5px;
 }
+
+.mb_12 {
+    margin-bottom: 12px;
+}
+.mb_20 {
+    margin-bottom: 20px;
+}
