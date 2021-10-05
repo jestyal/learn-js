@@ -65,8 +65,10 @@
                     </div>
                 </div>
                 <div class="lesson__solution">
-                    <button class="btn" onclick="formatDate(date)">Вывести дату</button>
-                    <div id="#date"></div>
+                    <button class="btn mb_12" onclick="formatDate(new Date(new Date - 1))">Вывести дату (прошло менее секунды)</button>
+                    <button class="btn mb_12" onclick="formatDate(new Date(new Date - 30 * 1000))">Вывести дату (прошло меньше минуты)</button>
+                    <button class="btn mb_12" onclick="formatDate(new Date(new Date - 5 * 60 * 1000))">Вывести дату (прошло меньше часа)</button>
+                    <button class="btn mb_12" onclick="formatDate(new Date(new Date - 86400 * 1000))">Вывести дату (полная дата)</button>
                 </div>
             </div>
         </div>
