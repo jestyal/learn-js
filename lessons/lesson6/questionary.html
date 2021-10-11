@@ -11,8 +11,16 @@
     <link href="../../assets/styles/blocks/lessons.css" rel="stylesheet">
     <link href="../../assets/styles/blocks/form.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="../../assets/images/favicons/chat.svg" type="image/svg">
+    <link rel="shortcut icon" href="../../assets/images/favicons/form.svg" type="image/svg">
     <title>Questionary</title>
+    <style>
+        input:required:valid {
+            border-color: var(--color-green);
+        }
+        /*input:required:invalid {*/
+        /*    border-color: var(--color-pink);*/
+        /*}*/
+    </style>
 </head>
 <body>
 <header class="header">
@@ -54,7 +62,7 @@
         <div class="lesson">
             <div class="lesson__item">
                 <div class="lesson__desc">
-                    <h2 class="lesson__title">Опросник для обладателей котиков</h2>
+                    <h2 class="lesson__title">Валидация через HTML5</h2>
                     <div class="lesson__task lesson__task_full">
                         <p>Доработать форму-опросник для владельцев котиков из прошлых заданий, сделав для нее валидацию
                             через HTML5.</p>
@@ -72,9 +80,9 @@
                                        placeholder="Кличка питомца" required/>
                             </div>
                             <div class="form__item">
-                                <label class="form__label" for="name">Имя владельца*</label>
+                                <label class="form__label" for="name">ФИО владельца (на русском языке)*</label>
                                 <input class="form__input" type="text" id="name" name="name"
-                                       placeholder="Имя владельца" required/>
+                                       placeholder="Имя владельца" pattern="[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?" required/>
                             </div>
                             <div class="form__item">
                                 <label class="form__label" for="contacts">Контакты владельца*</label>
@@ -207,6 +215,5 @@
         </div>
     </div>
 </footer>
-<script src="js/questionary.js"></script>
 </body>
 </html>

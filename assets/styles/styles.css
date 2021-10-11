@@ -99,7 +99,12 @@ a:hover {
 .btn:focus {
     outline: none;
 }
-
+.btn__group {
+    display: flex;
+}
+.btn__group .btn:not(:last-of-type) {
+    margin-right: 12px;
+}
 .copyright {
     max-width: 180px;
     font-size: 13px;
@@ -121,9 +126,17 @@ a:hover {
     margin: 0 5px;
 }
 
+.mb_0 {
+    margin-bottom: 0 !important;
+}
 .mb_12 {
-    margin-bottom: 12px;
+    margin-bottom: 12px !important;
 }
 .mb_20 {
-    margin-bottom: 20px;
+    margin-bottom: 20px !important;
+}
+
+.width_50 {
+    max-width: 50% !important;
+    width: 100% !important;
 }

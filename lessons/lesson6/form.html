@@ -56,7 +56,7 @@
                 <div class="lesson__desc">
                     <h2 class="lesson__title">Форма регистрации</h2>
                     <div class="lesson__task">
-                        <p>2. Доработать форму регистрации из прошлых заданий, сделав для нее валидацию через JS.</p>
+                        <p>Доработать форму регистрации из прошлых заданий, сделав для нее валидацию через JS.</p>
                     </div>
                 </div>
                 <div class="lesson__solution">
@@ -65,30 +65,35 @@
                             <h2 class="form__title">Регистрация</h2>
                             <span class="form__desc">Зарегистрируйтесь, чтобы смотреть фото и видео ваших друзей.</span>
                         </div>
-                        <form id="registration-form" action="" class="form" onsubmit="return false">
+                        <form id="registration-form" action="" class="form" novalidate>
                             <div class="form__item">
                                 <label class="form__label">
-                                    <input id="name" type="text" class="form__input" placeholder="Имя" required>
+                                    ФИО*
+                                    <input id="name" type="text" class="form__input" placeholder="Иванов Иван Иванович" required>
                                 </label>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
-                                    <input id="phone" type="tel" class="form__input" placeholder="Телефон" required>
+                                    Телефон*
+                                    <input id="phone" type="tel" class="form__input" placeholder="+7(999)000-00-00" minlength="10" maxlength="13" required>
                                 </label>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
-                                    <input id="email" type="email" class="form__input" placeholder="Email" required>
+                                    Email*
+                                    <input id="email" type="email" class="form__input" placeholder="mail@mail.ru" required>
                                 </label>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
+                                    Дата рождения*
                                     <input id="birthday" type="date" class="form__input" placeholder="Дата рождения"
                                            required>
                                 </label>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
+                                    Пароль* (не менее 8 символов)
                                     <input id="password" type="password" class="form__input" placeholder="Пароль"
                                            required>
                                 </label>
@@ -103,7 +108,7 @@
                                 <label for="policy-check">Регистрируясь, вы принимаете наши Условия, Политику
                                     использования данных и Политику в отношении файлов cookie.</label>
                             </div>
-                            <input type="submit" class="btn form__btn" value="Регистрация" onclick="validateInput()">
+                            <button type="submit" class="btn form__btn" onclick="checkAll()">Регистрация</button>
                         </form>
                     </div>
                 </div>

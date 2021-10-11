@@ -109,3 +109,6 @@
 .comment__item {
     margin-bottom: 8px;
 }
+.checkbox {
+    cursor: pointer;
+}
