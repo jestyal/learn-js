@@ -10,6 +10,7 @@
     <link href="../../assets/styles/styles.css" rel="stylesheet">
     <link href="../../assets/styles/blocks/lessons.css" rel="stylesheet">
     <link href="../../assets/styles/blocks/form.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/notes.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="../../assets/images/favicons/string.svg" type="image/svg">
     <title>Notes</title>
@@ -49,19 +50,43 @@
         </div>
     </div>
 </header>
-<section class="lesson__wrap">
+<section class="lesson__wrap lesson__wrap_full">
     <div class="wrapper">
         <div class="lesson">
             <div class="lesson__item">
                 <div class="lesson__desc">
                     <h2 class="lesson__title">Заметки</h2>
                     <div class="lesson__task lesson__task_full">
-                        <p>4. Сделать локальное хранилище заметок для себя любимой. Не забыть валидацию при добавлении заметки.
+                        <p>Сделать локальное хранилище заметок для себя любимой. Не забыть валидацию при добавлении заметки.
                         </p>
                     </div>
                 </div>
                 <div class="lesson__solution">
-
+                    <div class="form__wrap width_50 mb_20">
+                        <form class="form">
+                            <div class="form__item">
+                                <label for="date" class="form__label">Дата</label>
+                                <input id="date" type="date" class="form__input" required>
+                            </div>
+                            <div class="form__item">
+                                <label for="noteTitle" class="form__label">Название заметки</label>
+                                <input id="noteTitle" type="text" class="form__input" required>
+                            </div>
+                            <div class="form__item">
+                                <label for="comment" class="form__label">Текст заметки</label>
+                                <textarea id="comment"  class="form__textarea"></textarea>
+                                <div class="msg-error"></div>
+                            </div>
+                            <button type="submit" class="btn">Отправить заметку в архив</button>
+                        </form>
+                        <div class="notes__wrap">
+<!--                            <div class="notes__item">-->
+<!--                                <div class="notes__title">Название заметки</div>-->
+<!--                                <div class="notes__date">12.10.2021</div>-->
+<!--                                <div class="notes__text">Текст заметки. Текст заметки. Текст заметки. Текст заметки. Текст заметки.</div>-->
+<!--                            </div>-->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

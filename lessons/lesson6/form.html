@@ -13,6 +13,11 @@
 
     <link rel="shortcut icon" href="../../assets/images/favicons/form.svg" type="image/svg">
     <title>Registration Form</title>
+    <style>
+        input:required:valid {
+            border-color: var(--color-green);
+        }
+    </style>
 </head>
 <body>
 <header class="header">
@@ -49,7 +54,7 @@
         </div>
     </div>
 </header>
-<section class="lesson__wrap">
+<section class="lesson__wrap lesson__wrap_full">
     <div class="wrapper">
         <div class="lesson">
             <div class="lesson__item">
@@ -68,20 +73,20 @@
                         <form id="registration-form" action="" class="form" novalidate>
                             <div class="form__item">
                                 <label class="form__label">
-                                    ФИО*
-                                    <input id="name" type="text" class="form__input" placeholder="Иванов Иван Иванович" required>
+                                    ФИО* <small>(на русском языке с больших букв)</small>
+                                    <input id="name" type="text" class="form__input" placeholder="ФИО" required pattern="[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?">
                                 </label>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
-                                    Телефон*
-                                    <input id="phone" type="tel" class="form__input" placeholder="+7(999)000-00-00" minlength="10" maxlength="13" required>
+                                    Телефон* <small>(в формате +7(999)999-99-99)</small>
+                                    <input id="phone" type="tel" class="form__input" placeholder="Телефон" minlength="11" maxlength="13"  required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
                                 </label>
                             </div>
                             <div class="form__item">
                                 <label class="form__label">
-                                    Email*
-                                    <input id="email" type="email" class="form__input" placeholder="mail@mail.ru" required>
+                                    Email* <small>(в формате mail@mail.ru)</small>
+                                    <input id="email" type="email" class="form__input" placeholder="Email" required pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
                                 </label>
                             </div>
                             <div class="form__item">
@@ -94,21 +99,20 @@
                             <div class="form__item">
                                 <label class="form__label">
                                     Пароль* (не менее 8 символов)
-                                    <input id="password" type="password" class="form__input" placeholder="Пароль"
-                                           required>
+                                    <input id="password" type="password" class="form__input" placeholder="Пароль" minlength="8" maxlength="20"
+                                           required autocomplete="on">
                                 </label>
+                            </div>
+                            <div class="policy__wrap">
+                                <input id="policy-check" type="checkbox" class="checkbox" required placeholder="Политика">
+                                <label for="policy-check">Регистрируясь, вы принимаете наши Условия, Политику
+                                    использования данных и Политику в отношении файлов cookie.</label>
                             </div>
                             <div class="form__msg">
                                 <div id="msg-error" class="msg msg-error"></div>
                                 <div id="msg-success" class="msg msg-success"></div>
                             </div>
-
-                            <div class="policy__wrap">
-                                <input id="policy-check" type="checkbox" class="checkbox" required>
-                                <label for="policy-check">Регистрируясь, вы принимаете наши Условия, Политику
-                                    использования данных и Политику в отношении файлов cookie.</label>
-                            </div>
-                            <button type="submit" class="btn form__btn" onclick="checkAll()">Регистрация</button>
+                            <button type="submit" class="btn form__btn">Регистрация</button>
                         </form>
                     </div>
                 </div>

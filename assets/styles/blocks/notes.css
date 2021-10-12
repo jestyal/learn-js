@@ -1,0 +1,20 @@
+.notes__wrap {
+
+}
+.notes__item {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--color-grey);
+}
+.notes__title {
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.notes__date {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+.notes__text {
+
+}
