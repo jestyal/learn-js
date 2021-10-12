@@ -14,5 +14,5 @@ function saveToLocalStorage() {
     let noteText = comment.value;
     localStorage.setItem('date', value);
     localStorage.setItem('title', title);
-    localStorage.setItem('title', noteText);
+    localStorage.setItem('comment', noteText);
 }
