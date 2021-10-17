@@ -140,3 +140,7 @@ a:hover {
     max-width: 50% !important;
     width: 100% !important;
 }
+
+.list__wrap {
+    list-style-position: inside;
+}

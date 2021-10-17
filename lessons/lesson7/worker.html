@@ -7,10 +7,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="assets/styles/styles.css" rel="stylesheet">
-    <link href="assets/styles/blocks/lessons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/favicons/java-script.svg" type="image/svg">
-    <title>JavaScript lessons</title>
+    <link href="../../assets/styles/styles.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/lessons.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/form.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../../assets/images/favicons/form.svg" type="image/svg">
+    <title>Class</title>
 </head>
 <body>
 <header class="header">
@@ -47,80 +49,24 @@
         </div>
     </div>
 </header>
-<section class="lesson__wrap">
+<section class="lesson__wrap lesson__wrap_full">
     <div class="wrapper">
-        <h1 class="title">Lessons:</h1>
-        <div class="lesson__list">
-            <div class="lesson__link">
-                <h2 class="title">Lesson 1 - Введение в JavaScript</h2>
-                <ul class="list__wrap">
-                    <li class="list__item">
-                        <a href="lessons/lesson1/calculator.html" class="">калькулятор</a>
-                    </li>
-                </ul>
+        <div class="lesson">
+            <div class="lesson__item">
+                <div class="lesson__desc">
+                    <h2 class="lesson__title">Форма регистрации</h2>
+                    <div class="lesson__task">
+                        Создайте класс Работник, который будет иметь следующие свойства: name (имя), surname (фамилия), rate (ставка за день работы), days (количество отработанных дней). Также класс должен иметь метод getSalary(), который будет выводить зарплату работника. Зарплата - это произведение (умножение) ставки rate на количество отработанных дней days.
+                    </div>
+                </div>
+                <div class="lesson__solution">
+
+                </div>
             </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 2 - Функции</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson2/calculator.html" class="">калькулятор</a></li>
-                    <li class="list__item"><a href="lessons/lesson2/background.html" class="">фон</a></li>
-                    <li class="list__item"><a href="lessons/lesson2/gallery.html" class="">галерея</a></li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 3 - Условия, события</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson3/calculator.html" class="">калькулятор</a></li>
-                    <li class="list__item"><a href="lessons/lesson3/form.html" class="">форма регистрации</a></li>
-                    <li class="list__item"><a href="lessons/lesson3/theme.html" class="">выбор темы оформления</a></li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 4 - Массывы, циклы</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson4/array.html" class="">массивы</a></li>
-                    <li class="list__item"><a href="lessons/lesson4/calculator-auto.html" class="">расчет стоимости
-                        авто</a></li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 5 - Строки, Даты, Math</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson5/strings.html" class="">работа со строками</a></li>
-                    <li class="list__item"><a href="lessons/lesson5/chat.html" class="">интерфейс со спам фильтром</a>
-                    </li>
-                    <li class="list__item"><a href="lessons/lesson5/date.html" class="">датой</a></li>
-                    <li class="list__item"><a href="lessons/lesson5/math.html" class="">математическими функциями</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 6 - Валидация, Веб-хранилища (Local Storage)</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson6/questionary.html">форма c валидацией через HTML5</a>
-                    </li>
-                    <li class="list__item"><a href="lessons/lesson6/form.html">форма с валидацией через JS</a></li>
-                    <li class="list__item"><a href="lessons/lesson6/chat.html">чат с сохранением данных
-                        (веб-хранилище)</a></li>
-                    <li class="list__item"><a href="lessons/lesson6/notes.html">локальное хранилище заметок (НЕ
-                        ДОДЕЛАНО)</a></li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 7 - Объекты</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson7/worker.html">класс Работник</a></li>
-                    <li class="list__item"><a href="lessons/lesson7/cat.html">класс Cat</a></li>
-                    <li class="list__item"><a href="lessons/lesson7/calculator.html">Calculator</a></li>
-                    <li class="list__item"><a href="lessons/lesson7/form.html">Validator</a></li>
-                </ul>
-            </div>
-            <!--            <div class="lesson__link">-->
-            <!--                Lesson 6-->
-            <!--            </div>-->
         </div>
     </div>
 </section>
+
 <footer class="footer">
     <div class="wrapper footer__wrap">
         <div class="logo">
@@ -197,5 +143,6 @@
         </div>
     </div>
 </footer>
+<script src="js/worker.js"></script>
 </body>
 </html>
