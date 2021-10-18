@@ -64,7 +64,7 @@
                 <div class="lesson__desc">
                     <h2 class="lesson__title"></h2>
                     <div class="lesson__task lesson__task_full">
-                        <p>2. Помните наше практическое задание с опросником для владельцев котиков? Он нам снова пригодится! Напишите класс `Cat` со свойствами, соответствующими полям вашего опросника (например, кличка, корм и пр.), и по нажатию на кнопку "Ок" создайте экземпляр этого класса, заполнив его свойства ответами из опросника. В этом классе будут только свойства и конструктор, без методов. Выведите результат (заполненный объект класса `Cat`) в консоль при помощи console.log..</p>
+                        <p>Напишите класс Cat со свойствами, соответствующими полям вашего опросника (например, кличка, корм и пр.), и по нажатию на кнопку "Ок" создайте экземпляр этого класса, заполнив его свойства ответами из опросника. В этом классе будут только свойства и конструктор, без методов. Выведите результат (заполненный объект класса Cat) в консоль при помощи console.log.</p>
                     </div>
                 </div>
                 <div class="lesson__solution">
@@ -74,50 +74,51 @@
                         </div>
                         <form class="form">
                             <div class="form__item">
-                                <label class="form__label" for="pet-name">Кличка питомца*</label>
-                                <input class="form__input" type="text" id="pet-name" name="pet-name"
+                                <label class="form__label" for="nickname">Кличка питомца*</label>
+                                <input class="form__input" type="text" id="nickname" name="nickname"
                                        placeholder="Кличка питомца" required/>
                             </div>
+<!--                            <div class="form__item">-->
+<!--                                <label class="form__label" for="name">ФИО владельца (на русском языке)*</label>-->
+<!--                                <input class="form__input" type="text" id="name" name="name"-->
+<!--                                       placeholder="Имя владельца" pattern="[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?" required/>-->
+<!--                            </div>-->
+<!--                            <div class="form__item">-->
+<!--                                <label class="form__label" for="contacts">Контакты владельца*</label>-->
+<!--                                <input class="form__input" type="text" id="contacts" name="contacts"-->
+<!--                                       placeholder="Контакты владельца" required/>-->
+<!--                            </div>-->
                             <div class="form__item">
-                                <label class="form__label" for="name">ФИО владельца (на русском языке)*</label>
-                                <input class="form__input" type="text" id="name" name="name"
-                                       placeholder="Имя владельца" pattern="[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?" required/>
-                            </div>
-                            <div class="form__item">
-                                <label class="form__label" for="contacts">Контакты владельца*</label>
-                                <input class="form__input" type="text" id="contacts" name="contacts"
-                                       placeholder="Контакты владельца" required/>
-                            </div>
-                            <div class="form__item">
+                                <label class="form__label" for="breed">Порода</label>
                                 <select class="form__select" name="breed" id="breed">
-                                    <option value="breed" selected="selected">Порода 1</option>
-                                    <option value="breed">Порода 2</option>
-                                    <option value="breed">Порода 3</option>
+                                    <option value="Порода 1" selected="selected">Порода 1</option>
+                                    <option value="Порода 2">Порода 2</option>
+                                    <option value="Порода 3">Порода 3</option>
                                 </select>
                             </div>
                             <div class="form__item">
                                 <p class="form__label">Корм:</p>
                                 <label class="form__label" for="feed1">
-                                    <input type="checkbox" id="feed1" name="feed1" value="feed1">
+                                    <input type="checkbox" id="feed1" name="feed1" value="Сухой корм">
                                     Сухой корм
                                 </label>
                                 <label class="form__label" for="feed2">
-                                    <input type="checkbox" id="feed2" name="feed2" value="feed2">
+                                    <input type="checkbox" id="feed2" name="feed2" value="Влажный корм">
                                     Влажный корм
                                 </label>
                                 <label class="form__label" for="feed3">
-                                    <input type="checkbox" id="feed3" name="feed3" value="feed3">
+                                    <input type="checkbox" id="feed3" name="feed3" value="Натуральный корм">
                                     Натуральный корм
                                 </label>
                             </div>
                             <div class="form__item">
                                 <p class="form__label">Пол:</p>
-                                <label class="form__label" for="male-sex">
-                                    <input id="male-sex" type="radio" name="sex" value="male"/>
+                                <label class="form__label" for="male-gender">
+                                    <input id="male-gender" type="radio" name="gender" value="Самец"/>
                                     Самец
                                 </label>
-                                <label class="form__label" for="female-sex">
-                                    <input id="female-sex" type="radio" name="sex" value="female"/>
+                                <label class="form__label" for="female-gender">
+                                    <input id="female-gender" type="radio" name="gender" value="Самка"/>
                                     Самка
                                 </label>
                             </div>
@@ -125,11 +126,11 @@
                                 <label class="form__label" for="comment">Комментарий </label>
                                 <textarea class="form__textarea" name="comment" id="comment"></textarea>
                             </div>
-                            <div class="form__item">
-                                <label class="form__label" for="photo">Фото питомца </label>
-                                <input class="form__input" type="file" id="photo">
-                            </div>
-                            <button class="btn">Сохранить</button>
+<!--                            <div class="form__item">-->
+<!--                                <label class="form__label" for="photo">Фото питомца </label>-->
+<!--                                <input class="form__input" type="file" id="photo">-->
+<!--                            </div>-->
+                            <button class="btn" type="submit">Сохранить</button>
                         </form>
                     </div>
                 </div>
@@ -214,5 +215,6 @@
         </div>
     </div>
 </footer>
+<script src="js/cat.js"></script>
 </body>
 </html>
