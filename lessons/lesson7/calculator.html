@@ -56,7 +56,7 @@
                 <div class="lesson__desc">
                     <h2 class="lesson__title">Калькулятор</h2>
                     <div class="lesson__task">
-                        <p>3. Создайте класс Калькулятор, который будет содержать 4 **статических** метода - Сложение, Умножение, Вычитание и Деление. Доработайте свою страничку с калькулятором, чтобы в ней использовались методы этого класса.</p>
+                        <p>Создайте класс Калькулятор, который будет содержать 4 статических метода - Сложение, Умножение, Вычитание и Деление. Доработайте свою страничку с калькулятором, чтобы в ней использовались методы этого класса.</p>
                     </div>
                 </div>
                 <div class="lesson__solution">
@@ -173,48 +173,6 @@
         </div>
     </div>
 </footer>
-<script>
-    function getNumber1() {
-        return +document.getElementById('number1').value;
-    }
-
-    function getNumber2() {
-        return +document.getElementById('number2').value;
-    }
-
-    let result = 0;
-
-    showResult();
-    function showResult() {
-        let resultDiv = document.getElementById("calculator__result");
-        resultDiv.innerHTML = result;
-    }
-
-    function calcSum() {
-        result = getNumber1() + getNumber2();
-        showResult(result);
-    }
-
-    function calcDiff() {
-        result = getNumber1() - getNumber2();
-        showResult(result);
-    }
-
-    function calcMult() {
-        result = getNumber1() * getNumber2();
-        showResult(result);
-    }
-
-    function calcDiv() {
-        if (getNumber2() === 0) {
-            result = 'На ноль делить нельзя!'
-        } else {
-            result = getNumber1() / getNumber2();
-        }
-        showResult(result);
-    }
-
-</script>
-
+<script src="js/calculator.js"></script>
 </body>
 </html>

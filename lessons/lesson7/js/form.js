@@ -51,43 +51,39 @@ function checkAll() {
     errorMsg.innerHTML = errors.join('<br>');
 }
 
-// function chekNameInput() {
-//     let reg = /[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?/g;
-//
-//     let name = document.querySelector('#name');
-//     if (name.value.match(reg)) {
-//         return true;
-//     }
-//     else {
-//         errorMsg.textContent = "ФИО введено некорректно";
-//         return false;
-//     }
-// }
-//
-// function chekEmailInput() {
-//     let reg = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/gm;
-//
-//     let email = document.querySelector('#email');
-//     if (email.value.match(reg)) {
-//         return true;
-//     }
-//     else {
-//         errorMsg.textContent = "Электронная почта введена некорректно";
-//         return false;
-//     }
-// }
-//
-// function chekPhoneInput() {
-//     let reg = /(\+7|8)[- _]*\(?[- _]*(\d{3}[- _]*\)?([- _]*\d){7}|\d\d[- _]*\d\d[- _]*\)?([- _]*\d){6})/g;
-//
-//     let phone = document.querySelector('#phone');
-//     if (phone.value.match(reg)) {
-//         return true;
-//     }
-//     else {
-//         errorMsg.textContent = "Телефон введен некорректно";
-//         return false;
-//     }
-// }
-//
 
+//
+//
+// class Calculator {
+//     static sum (a, b) {
+//         return a + b;
+//     }
+//
+//     static minus (a, b) {
+//         return a - b;
+//     }
+//
+//     static mult (a, b) {
+//         return a * b;
+//     }
+//
+//     static divide (a, b) {
+//         return a / b;
+//     }
+// }
+
+// class Validation {
+//     static сheckEmptyInputs(inputs) {
+//         let isEmpty = false;
+//         for (let input of inputs) {
+//             if (input.value == '')
+//                 isEmpty = true;
+//         }
+//         return isEmpty;
+//     }
+// }
+//
+// if (Validation.сheckEmptyInputs(document.getElementsByClassName('test'))) {
+//     //есть пустой элемент
+//     alert('Есть пустой элемент!');
+// }
