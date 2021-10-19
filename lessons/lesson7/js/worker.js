@@ -7,7 +7,7 @@ class Worker {
     }
 
     getSalary() {
-        console.log( this.rate * this.days );
+        return this.rate * this.days;
     }
 }
 
