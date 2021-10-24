@@ -59,3 +59,14 @@ function calcDiv() {
     console.log(result);
     showResult(result);
 }
+
+
+const person = {
+    name: 'Valera',
+    age: 23,
+};
+
+let city = person.city;
+city = 'Amsterdam'
+
+console.log(person);
