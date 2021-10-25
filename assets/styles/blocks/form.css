@@ -112,3 +112,44 @@
 .checkbox {
     cursor: pointer;
 }
+
+.rating__wrap {
+    padding-top: 10px;
+    border-top: 1px solid var(--color-light-grey);
+    font-weight: bolder;
+}
+
+.form__range {
+    position: relative;
+    padding-bottom: 20px;
+    max-width: 200px;
+    width: 100%;
+}
+.form__range::before,
+.form__range::after {
+    position: absolute;
+    display: block;
+    bottom: 0;
+    font-size: 14px;
+    font-weight: bolder;
+}
+.form__range::before {
+    content: "1";
+    left: 0;
+}
+.form__range::after {
+    content: "10";
+    right: 0;
+
+}
+.form__input_range {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+.form__input_range:focus {
+    outline: none;
+}
+.form__datalist {
+
+}
