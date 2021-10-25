@@ -1,4 +1,4 @@
-let json = `[{
+let comicsCharacters = [{
     "universe": "Marvel Comics",
     "nickname": "Мистик (Mystique)",
     "name": "Рэйвен Даркхолм (Raven Darkholme)",
@@ -8,10 +8,7 @@ let json = `[{
     "enemies": ["Люди Икс"],
     "allies": ["Магнето", "Апокалипсис", "Саблезубый", "Пузырь", "Жаба", "Пиро", "Ртуть"],
     "feature": "Имитация внешности, Замедленное старение, Исцеляющий фактор, Сверхчеловеческая ловкость, Устойчивость к телепатии",
-    "info": "
-    Мистик — мутант-перевёртыш. Она способна принять внешность любого гуманоидного существа, примерно одного с ней веса и роста. 
-    Мутация Мистик также включает в себя повышенные регенерационные способности и, как следствие, замедленное старение.
-    Из-за своего столетнего возраста Мистик накопила огромные знания в шпионаже, воровстве, хакерстве, психологии и боевых искусствах и приобрела несравненный боевой опыт как в рукопашном бою, так и в обращении с различным оружием.",
+    "info": "Мистик — мутант-перевёртыш. Она способна принять внешность любого гуманоидного существа, примерно одного с ней веса и роста. Мутация Мистик также включает в себя повышенные регенерационные способности и, как следствие, замедленное старение. Из-за своего столетнего возраста Мистик накопила огромные знания в шпионаже, воровстве, хакерстве, психологии и боевых искусствах и приобрела несравненный боевой опыт как в рукопашном бою, так и в обращении с различным оружием.",
     "rating": 0,
 }, {
     "universe": "DC Comics",
@@ -80,8 +77,8 @@ let json = `[{
     "img": "phoenix.jpg",
     "type": "Мутант",
     "position": "Добро, позже Зло",
-    "enemies": [Магнето (ранее), Люди Икс],
-    "allies": [Люди Икс (ранее), Магнето],
+    "enemies": ["Магнето (ранее)", "Люди Икс"],
+    "allies": ["Люди Икс (ранее)", "Магнето"],
     "feature": "Телепатия, Телекинез (включая левитацию), Абсолютная власть над материей, мыслью и энергией, Возможность воскрешать умерших, Управление временными линиями",
     "info": "Джин Грей — мутант, рождённая с телепатическими и телекинетическими силами. Феникс важная личность в жизнях Профессора Икс, который для неё как отец и наставник; Росомахи, очень хорошего друга и в некоторые моменты — потенциального романтического интереса; Грозы, которая её лучшая подруга и сестринская фигура; своего мужа Циклопа.",
     "rating": 0,
@@ -121,43 +118,96 @@ let json = `[{
     "feature": "Сверхчеловеческая сила, Скорость, Ограниченная неуязвимость, Бессмертие, Исцеляющий фактор, Полёт, Понимание животных",
     "info": "Чудо-женщина — принцесса амазонок, опытная воительница, обладает сверхчеловеческой силой, скоростью, выносливостью, умеет общаться с животными, а также использует лассо Истины, с помощью которого может заставить говорить правду, и неразрушимые браслеты, которые служат в качестве защиты.",
     "rating": 0,
-}]`;
+}];
 
-let comicsBlock = document.querySelector(".comics__info");
 
 document.addEventListener("DOMContentLoaded", (event) => {
-    let evils = JSON.parse(json);
+    let characters = JSON.stringify(comicsCharacters);
+    let charactersArray = JSON.parse(characters);
+    // console.log(JSON.parse(characters));
+    // let blockContent = "";
+    for (let character of charactersArray) {
+        console.log(character);
+        createElement(character);
 
-    let blockContent = "";
+        // blockContent += createElement(character.name);
+        //     `<div class="">`
+        //     +
+        //
+        //     `<h2>${evil.nickname}</h2>`
+        //     +
+        //     ((evil.universe == undefined)? `` : `<h2>${evil.universe}</h2>`)
+        //
+        //     +
+        //     `<div>`;
 
-    for(let evil of evils) {
-
-
-
-
-        // var x = document.createElement("INPUT");
-        // x.setAttribute("type", "range");
-        // менять данные
-        // сохранить массив в локал сторедж / читать из массива из локал сторедж
-        blockContent +=
-            `<div class="">`
-            +
-
-            `<h2>${evil.nickname}</h2>`
-            +
-            ((evil.universe == undefined)? `` : `<h2>${evil.universe}</h2>`)
-
-            +
-            `<div>`;
-        ;
-        // и т.д.
     }
-    document.querySelector(".comics__info").innerHTML = blockContent;
+    // document.querySelector(".comics__wrap").innerHTML = blockContent;
 })
 
+
 function createElement(value) {
-    let item = document.createElement("div");
-    item.classList.add("comics__item");
-    // item.innerHTML = value;
-    // comicsBlock.append(item);
+    let comicsBlock = "";
+
+    comicsBlock = document.querySelector(".comics__wrap");
+
+    let comicsItem = document.createElement("div");
+    comicsItem.classList.add("comics__item");
+    comicsBlock.append(comicsItem);
+
+    let comicsImageWrap = document.createElement("div");
+    comicsImageWrap.classList.add("comics__img");
+    comicsItem.append(comicsImageWrap);
+
+    let comicsImage = document.createElement("img");
+    comicsImage.setAttribute("src", "../../assets/images/comics/" + value.img);
+    comicsImageWrap.append(comicsImage);
+
+    let comicsInfo = document.createElement("div");
+    comicsInfo.classList.add("comics__info");
+    comicsItem.append(comicsInfo);
+
+    function createElementItem(className, title, value) {
+        let elementItem = document.createElement("div");
+        elementItem.classList.add(className);
+        elementItem.innerHTML = `${title}: <span>${value}</span>`
+        comicsInfo.append(elementItem);
+    }
+
+    createElementItem("comics__universe", "Вселенная", value.universe);
+    createElementItem("comics__nickname", "Прозвище", value.nickname);
+    createElementItem("comics__name", "Настоящее имя", value.name);
+    createElementItem("comics__type", "Вид", value.type);
+    createElementItem("comics__position", "Позиция", value.position);
+    createElementItem("comics__enemies", "Враги", value.enemies);
+    createElementItem("comics__allies", "Союзники", value.allies);
+    createElementItem("comics__feature", "Способности", value.feature);
+    createElementItem("comics__info", "Описание", value.info);
+
+    let ratingBlock = document.createElement("div");
+    ratingBlock.classList.add("rating__wrap");
+    comicsItem.append(ratingBlock);
+
+    let ratingLabel = document.createElement("label");
+    ratingLabel.classList.add("form__label");
+    ratingLabel.setAttribute("for", "rating");
+    ratingLabel.innerText = "Моя оценка:";
+    ratingBlock.append(ratingLabel)
+
+    let rangeBlock = document.createElement("div");
+    rangeBlock.classList.add("form__range");
+    ratingBlock.append(rangeBlock);
+
+    let rangeInput = document.createElement("input");
+    rangeInput.classList.add("form__input_range");
+    rangeInput.setAttribute("type", "range");
+    rangeInput.setAttribute("id", "rating");
+    rangeInput.setAttribute("step", "1");
+    rangeInput.setAttribute("min", "1");
+    rangeInput.setAttribute("max", "10");
+    rangeInput.setAttribute("value", "5");
+    rangeBlock.append(rangeInput);
 }
+
+
+
