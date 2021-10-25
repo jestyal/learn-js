@@ -121,12 +121,15 @@ let comicsCharacters = [{
 }];
 
 
+let localComicsCharacters = getFromLocalStorage();
+
+
 document.addEventListener("DOMContentLoaded", (event) => {
     let characters = JSON.stringify(comicsCharacters);
     let charactersArray = JSON.parse(characters);
     // console.log(JSON.parse(characters));
     for (let character of charactersArray) {
-        // console.log(character);
+        console.log(character);
         createElement(character);
     }
 })
@@ -189,11 +192,30 @@ function createElement(value) {
     rangeInput.setAttribute("type", "range");
     rangeInput.setAttribute("id", "rating");
     rangeInput.setAttribute("step", "1");
-    rangeInput.setAttribute("min", "1");
-    rangeInput.setAttribute("max", "10");
-    rangeInput.setAttribute("value", "5");
+    rangeInput.setAttribute("min", "0");
+    rangeInput.setAttribute("max", "9");
+    rangeInput.setAttribute("value", "0");
     rangeBlock.append(rangeInput);
+
+    rangeInput.addEventListener("change", () => {
+        let userRating = rangeInput.value;
+        // console.log(userRating);
+        // console.log(value.rating);
+        value.rating = userRating;
+        // console.log(value.rating);
+        setFromLocalStorage();
+    })
 }
 
 
+function getFromLocalStorage() {
+    let localComicsCharacters = JSON.parse(localStorage.getItem("characters"));
+    if (!localComicsCharacters) {
+        localComicsCharacters = comicsCharacters
+    }
+    return localComicsCharacters;
+}
 
+function setFromLocalStorage() {
+    localStorage.setItem("characters", JSON.stringify(comicsCharacters));
+}
