@@ -204,11 +204,14 @@ function createElement(value, index) {
 
 
     let rangeInputs = document.querySelectorAll(".form__input_range");
+    //вместо rangeInputs[index] здесь можно использовать rangeInput и userRatingBlock - они уже относятся к герою под нужным индексом
     rangeInputs[index].addEventListener("change", () => {
         let userRating = rangeInputs[index].value;
         value.rating = userRating;
         rangeInputs[index].setAttribute("value", userRating);
 
+        //удалять и пересоздавать блок не обязательно
+        // можно просто поменять ему innerText
         let userRatingBlocks = document.querySelectorAll(".rating__value");
         if(userRatingBlocks[index]) {
             userRatingBlocks[index].remove();

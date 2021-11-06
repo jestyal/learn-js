@@ -23,4 +23,3 @@ function getDog() {
         })
         .catch(errors => console.log(errors));
 }
-

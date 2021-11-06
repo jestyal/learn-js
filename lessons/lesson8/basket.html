@@ -7,10 +7,33 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="assets/styles/styles.css" rel="stylesheet">
-    <link href="assets/styles/blocks/lessons.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/favicons/java-script.svg" type="image/svg">
-    <title>JavaScript lessons</title>
+    <link href="../../assets/styles/styles.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/lessons.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/form.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../../assets/images/favicons/chat.svg" type="image/svg">
+    <title>Корзина</title>
+    <style>
+        .card__item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--color-light-grey);
+        }
+        .card__item div {
+            margin-bottom: 12px;
+        }
+        .total-price {
+            font-size: 18px;
+            font-weight: bolder;
+        }
+        .price-old {
+            color: var(--color-pink);
+            text-decoration: line-through;
+        }
+        .card__item .btn {
+            width: fit-content;
+            background-color: var(--color-pink);
+        }
+    </style>
 </head>
 <body>
 <header class="header">
@@ -49,89 +72,78 @@
 </header>
 <section class="lesson__wrap lesson__wrap_full">
     <div class="wrapper">
-        <h1 class="title">Lessons:</h1>
-        <div class="lesson__list">
-            <div class="lesson__link">
-                <h2 class="title">Lesson 1 - Введение в JavaScript</h2>
-                <ul class="list__wrap">
-                    <li class="list__item">
-                        <a href="lessons/lesson1/calculator.html" class="">калькулятор</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 2 - Функции</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson2/calculator.html" class="">калькулятор</a></li>
-                    <li class="list__item"><a href="lessons/lesson2/background.html" class="">фон</a></li>
-                    <li class="list__item"><a href="lessons/lesson2/gallery.html" class="">галерея</a></li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 3 - Условия, события</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson3/calculator.html" class="">калькулятор</a></li>
-                    <li class="list__item"><a href="lessons/lesson3/form.html" class="">форма регистрации</a></li>
-                    <li class="list__item"><a href="lessons/lesson3/theme.html" class="">выбор темы оформления</a></li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 4 - Массывы, циклы</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson4/array.html" class="">массивы</a></li>
-                    <li class="list__item"><a href="lessons/lesson4/calculator-auto.html" class="">расчет стоимости
-                        авто</a></li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 5 - Строки, Даты, Math</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson5/strings.html" class="">работа со строками</a></li>
-                    <li class="list__item"><a href="lessons/lesson5/chat.html" class="">интерфейс со спам фильтром</a>
-                    </li>
-                    <li class="list__item"><a href="lessons/lesson5/date.html" class="">датой</a></li>
-                    <li class="list__item"><a href="lessons/lesson5/math.html" class="">математическими функциями</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 6 - Валидация, Веб-хранилища (Local Storage)</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson6/questionary.html">форма c валидацией через HTML5</a>
-                    </li>
-                    <li class="list__item"><a href="lessons/lesson6/form.html">форма с валидацией через JS</a></li>
-                    <li class="list__item"><a href="lessons/lesson6/chat.html">чат с сохранением данных
-                        (веб-хранилище)</a></li>
-                    <li class="list__item"><a href="lessons/lesson6/notes.html">локальное хранилище заметок (НЕ
-                        ДОДЕЛАНО)</a></li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 7 - Объекты</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson7/worker.html">класс Работник</a></li>
-                    <li class="list__item"><a href="lessons/lesson7/cat.html">класс Cat</a></li>
-                    <li class="list__item"><a href="lessons/lesson7/calculator.html">Calculator</a></li>
-                    <li class="list__item"><a href="lessons/lesson7/form.html">Validator</a></li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 8 - JSON и сериализация, API </h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson8/json.html">JSON (комиксы)</a></li>
-                    <li class="list__item"><a href="lessons/lesson8/api.html">API</a></li>
-                </ul>
-            </div>
-            <div class="lesson__link">
-                <h2 class="title">Lesson 9 - HTTP Headers (заголовки), GET и POST</h2>
-                <ul class="list__wrap">
-                    <li class="list__item"><a href="lessons/lesson9/post.html">POST-запрос</a></li>
-                    <li class="list__item"><a href="lessons/lesson9/form-data.html">POST-запрос (FormData)</a></li>
-                </ul>
+        <div class="lesson">
+            <div class="lesson__item">
+                <div class="lesson__desc">
+                    <h2 class="lesson__title">Корзина</h2>
+                    <div class="lesson__task lesson__task_full">
+                        <h2 class="mb_20">+Этап 0: основной</h2>
+                        <p>Сделайте два поля ввода: для выбора товара и для выбора количества товаров. Также добавьте кнопку "Положить в корзину" и див для самой корзины.</p>
+                        <p>В options товаров храните название (textContent) и цену товара в рублях (value):</p>
+                        <p>Количество штук можно хранить в селекте или input</p>
+                        <h2 class="mb_20">+Этап 1: основной</h2>
+                        <p>При клике на кнопку Положить в корзину создайте объект товара. У объекта должно быть поле title (название), price (цена за штуку), amount (выбранное количество), totalPrice (цена за выбранное количество). *Вы можете это сделать с использованием класса и конструктора, или же через { }*</p>
+                        <p>Добавьте этот объект в массив. Наша цель на данном этапе — записывать все добавляемые товары в массив в виде объектов. Так данные удобно хранить, с ними удобно работать.</p>
+                        <p>После добавления выводите массив в консоль, проверяйте, что объекты туда нормально добавляются.</p>
+                        <h2 class="mb_20">+Этап 2: основной</h2>
+                        <p>Теперь выводите товары из массива на экран. Используйте для этого проход по массиву и методы createElement, append, textContent</p>
+                        <p>Используйте innerHTML только в случае, если совсем не понимаете как можно по-другому.</p>
+                        <p>Идеально будет вынести отрисовку корзины в отдельную функцию, часто её называют render. Её задача — на основе массива составить вёрстку корзины и показать её пользователю.</p>
+                        <h2 class="mb_20">+Этап 3: </h2>
+                        <p>После отрисовки корзины подсчитайте, сколько всего надо заплатить и сколько товаров мы покупаем</p>
+                        <h2 class="mb_20">+-Этап 4: </h2>
+                        <p>Добавьте чекбокс, который включает скидку. Если чекбокс проставлен, все цены в корзине уменьшаются на 10%! Корзина должна перерисовываться уже без клика на кнопку, а сразу, как только мы выставляем/снимаем чекбокс (событие change)</p>
+                        <p>Дополнительно: показывайте чекбокс, только если пользователь набрал товара хотя бы на 1000 рублей.</p>
+                        <h2 class="mb_20">Этап 5: </h2>
+                        <p>После того как корзину отрисована, выведите под суммой корзины самый дорогой товар и всю информацию о нем (так как он выводился в самой корзине, со всеми полями)</p>
+                        <p>эта задача про поиск объекта в массиве по условию, посмотрите в сторону метода массивов find</p>
+                        <h2 class="mb_20">+Этап 6: </h2>
+                        <p>Добавьте рядом с каждым товаром в корзине кнопку Удалить. При клике на неё товар должен удаляться</p>
+                        <p>подсказка: сначала удалите нужный товар из массива, потом перерисуйте корзину</p>
+                        <h2 class="mb_20">Этап 7: </h2>
+                        <p>Сделайте так, чтобы пользователь корзину не терял! Сохраняйте её в localStorage. *Опять: Сохраняйте сам массив, а не итоговую верстку корзины. Используйте новые методы для работы с JSON из 20 недели</p>
+                        <h2 class="mb_20">Этап 8: </h2>
+                        <p>Если пользователь добавил 2 помидора, а потом ещё 4 помидора, было бы здорово в корзине выводит их сразу как одну позицию, а не две разных.</p>
+                        <p>Попробуйте на этапе добавления товара в массив не просто добавлять его в конец, а поискать сначала, нет ли там такого товара?</p>
+                    </div>
+                </div>
+                <div class="lesson__solution">
+                    <div class="form__wrap">
+                        <div class="form__preview">
+                            <h2 class="form__title">Магазин</h2>
+                        </div>
+                        <form action="" class="form mb_20">
+                            <label for="amount" class="form__label">Выберите товар:</label>
+                            <select name="products" id="products" class="form__select">
+                                <option value="250">Помидоры</option>
+                                <option value="300">Огурцы</option>
+                            </select>
+                            <label for="amount" class="form__label">Количество товара:</label>
+                            <input id="amount" name="amount" type="number" class="form__input mb_20" min="1" max="100" step="1" value="1">
+
+                            <label id="sale-block" class="form__label" style="display: none;">
+                                <input id="sale-input" type="checkbox"> Получить скидку 10%
+                            </label>
+                            <button type="button" class="btn" onclick="createProductObject();">Положить в корзину</button>
+                        </form>
+                        <div class="card__wrap">
+                            <h2 class="title">Корзина</h2>
+                            <div class="card">
+
+                            </div>
+                            <div class="total-price mb_20"></div>
+                            <div class="expensive-product" style="display: none">
+                                <p><strong>Самый дорогой товар</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
 </section>
+
 <footer class="footer">
     <div class="wrapper footer__wrap">
         <div class="logo">
@@ -208,5 +220,6 @@
         </div>
     </div>
 </footer>
+<script src="js/basket.js"></script>
 </body>
 </html>
