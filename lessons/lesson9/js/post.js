@@ -65,5 +65,3 @@ function checkAll() {
     //выводим ошибки в div
     document.querySelector('#msg-error').innerHTML = errors.join('<br>');
 }
-
-

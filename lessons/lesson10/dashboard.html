@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="../../assets/styles/styles.css" rel="stylesheet">
+
+    <link href="../../assets/styles/blocks/dashboard.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="../../assets/images/favicons/chat.svg" type="image/svg">
+    <title>Dashboard</title>
+</head>
+<body>
+<section class="dashboard__wrap">
+    <div class="dashboard">
+        <div class="dashboard__item dashboard__item_left">
+            <h2 class="title project-title">
+                Project 1
+            </h2>
+            <div class="sidebar">
+                <select name="projects" id="projects">
+                    <option value="project-1">Project 1</option>
+                    <option value="project-2">Project 2</option>
+                </select>
+                <div class="sidebar__list">
+                    <a href="">Dashboard</a>
+                </div>
+                <div class="">
+                    <a href="" class="btn__add">Add new task</a>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard__item dashboard__item_center">
+            <div class="">
+                <div class="">
+                    <div class="title">Dashboard</div>
+                    <div class="current-date">
+                        <span>Sunday</span>, 07 November 2021
+                    </div>
+                </div>
+                <div class="">
+                    <input type="date" id="current-week" name="current-week" value="">
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <div class="">Weekly Activity</div>
+                </div>
+                <div class="">
+                    <div class="">
+                        <span>40+</span>
+                        <span>Projects</span>
+                    </div>
+                    <div class="">
+                        <span>60+</span>
+                        <span>Tasks</span>
+                    </div>
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <div class="title">Task</div>
+                    <div class=""><span>10 minutes</span> on this week</div>
+                    <div class=""></div>
+                </div>
+                <div class="">
+                    <div class="title">Task List</div>
+                    <div class="">
+                        <span>November</span> 07th
+                    </div>
+                    <div class="__wrap">
+                        <div class="__item">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dashboard__item dashboard__item_right">
+            <div class="profile">
+                <h2 class="title">Profile</h2>
+                <div class="user-avatar">
+                    <img src="../../assets/images/avatar.jpg" alt="avatar">
+                </div>
+                <div class="user-name">Natalie Doroshenko</div>
+                <div class="user-post">Frontend developer</div>
+            </div>
+            <div class="">
+                <div class="title">
+                    <span>Current project</span>
+                    <a href="">View all</a>
+                </div>
+                <div class="">
+                    <div class="">
+                        <div class="">Project 1</div>
+                        <div class="48%"></div>
+                    </div>
+                    <div class="">
+                        <div class="">Project 2</div>
+                        <div class="48%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

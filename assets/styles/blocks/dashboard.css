@@ -1,0 +1,97 @@
+.dashboard__wrap {
+    width: 100vw;
+    height: 100vh;
+    padding: 40px 0;
+    background-color: #e8e9f4;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    width: 100%;
+    max-width: 1280px;
+    height: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+.dashboard .title {
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.dashboard__item {
+    padding: 40px 20px;
+}
+
+.dashboard__item_left {
+
+}
+
+.dashboard__item_center {
+    background-color: #f5f7fb;
+}
+
+.dashboard__item_right {
+
+}
+
+
+.profile {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.user-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+}
+
+.user-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.user-name {
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+
+.user-post {
+    font-size: 14px;
+}
+
+.btn__add {
+    display: block;
+    position: relative;
+    width: fit-content;
+    padding: 10px 50px 10px 8px;
+    border-radius: var(--border-radius);
+    background-color: var(--color-light-grey);
+    font-weight: bolder;
+}
+
+.btn__add::after {
+    content: '+';
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #da7c82;
+    color: #fff;
+    font-weight: bolder;
+    text-align: center;
+    vertical-align: middle;
+}
