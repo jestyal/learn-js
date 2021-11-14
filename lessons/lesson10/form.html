@@ -12,11 +12,14 @@
     <link href="../../assets/styles/blocks/form.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="../../assets/images/favicons/form.svg" type="image/svg">
-    <title>Registration Form</title>
+    <title>FormData</title>
     <style>
         input:required:valid {
             border-color: var(--color-green);
         }
+        /*input:required:invalid {*/
+        /*    border-color: var(--color-pink);*/
+        /*}*/
     </style>
 </head>
 <body>
@@ -59,60 +62,75 @@
         <div class="lesson">
             <div class="lesson__item">
                 <div class="lesson__desc">
-                    <h2 class="lesson__title">Форма регистрации</h2>
-                    <div class="lesson__task">
-                        <p>Написать POST-запрос, который будет срабатывать при нажатии на кнопку "Отправить" из формы регистрации. Реализовать через JSON.</p>
+                    <h2 class="lesson__title">FormData</h2>
+                    <div class="lesson__task lesson__task_full">
+                        <p>Написать POST-запрос, который будет срабатывать при нажатии на кнопку "Отправить" из формы для владельцев котиков. Реализовать через FormData.</p>
                     </div>
                 </div>
                 <div class="lesson__solution">
                     <div class="form__wrap">
                         <div class="form__preview">
-                            <h2 class="form__title">Регистрация</h2>
-                            <span class="form__desc">Зарегистрируйтесь, чтобы смотреть фото и видео ваших друзей.</span>
+                            <h2 class="form__title">Опросник для обладателей котиков</h2>
                         </div>
-                        <form id="registration-form" action="" class="form" novalidate>
+<!--                        method="post" action="https://httpbin.org/forms/post"-->
+                        <form class="form">
                             <div class="form__item">
-                                <label class="form__label">
-                                    ФИО* <small>(на русском языке с больших букв)</small>
-                                    <input id="name" type="text" class="form__input" placeholder="ФИО" required pattern="[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?">
+                                <label class="form__label" for="pet-name">Кличка питомца*</label>
+                                <input class="form__input" type="text" id="pet-name" name="pet-name"
+                                       placeholder="Кличка питомца" required/>
+                            </div>
+                            <div class="form__item">
+                                <label class="form__label" for="name">ФИО владельца (на русском языке)*</label>
+                                <input class="form__input" type="text" id="name" name="name"
+                                       placeholder="Имя владельца" pattern="[А-ЯЁ][а-яё]+\s+[А-ЯЁ][а-яё]+(?:\s+[А-ЯЁ][а-яё]+)?" required/>
+                            </div>
+                            <div class="form__item">
+                                <label class="form__label" for="contacts">Контакты владельца*</label>
+                                <input class="form__input" type="text" id="contacts" name="contacts"
+                                       placeholder="Контакты владельца" required/>
+                            </div>
+                            <div class="form__item">
+                                <select class="form__select" name="breed" id="breed">
+                                    <option value="breed" selected="selected">Порода 1</option>
+                                    <option value="breed">Порода 2</option>
+                                    <option value="breed">Порода 3</option>
+                                </select>
+                            </div>
+                            <div class="form__item">
+                                <p class="form__label">Корм:</p>
+                                <label class="form__label" for="feed1">
+                                    <input type="checkbox" id="feed1" name="feed1" value="feed1">
+                                    Сухой корм
+                                </label>
+                                <label class="form__label" for="feed2">
+                                    <input type="checkbox" id="feed2" name="feed2" value="feed2">
+                                    Влажный корм
+                                </label>
+                                <label class="form__label" for="feed3">
+                                    <input type="checkbox" id="feed3" name="feed3" value="feed3">
+                                    Натуральный корм
                                 </label>
                             </div>
                             <div class="form__item">
-                                <label class="form__label">
-                                    Телефон* <small>(в формате +7(999)999-99-99)</small>
-                                    <input id="phone" type="tel" class="form__input" placeholder="Телефон" minlength="11" maxlength="13"  required pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+                                <p class="form__label">Пол:</p>
+                                <label class="form__label" for="male-sex">
+                                    <input id="male-sex" type="radio" name="sex" value="male"/>
+                                    Самец
+                                </label>
+                                <label class="form__label" for="female-sex">
+                                    <input id="female-sex" type="radio" name="sex" value="female"/>
+                                    Самка
                                 </label>
                             </div>
                             <div class="form__item">
-                                <label class="form__label">
-                                    Email* <small>(в формате mail@mail.ru)</small>
-                                    <input id="email" type="email" class="form__input" placeholder="Email" required pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$">
-                                </label>
+                                <label class="form__label" for="comment">Комментарий </label>
+                                <textarea class="form__textarea" name="comment" id="comment"></textarea>
                             </div>
                             <div class="form__item">
-                                <label class="form__label">
-                                    Дата рождения*
-                                    <input id="birthday" type="date" class="form__input" placeholder="Дата рождения"
-                                           required>
-                                </label>
+                                <label class="form__label" for="photo">Фото питомца </label>
+                                <input class="form__input" type="file" id="photo">
                             </div>
-                            <div class="form__item">
-                                <label class="form__label">
-                                    Пароль* (не менее 8 символов)
-                                    <input id="password" type="password" class="form__input" placeholder="Пароль" minlength="8" maxlength="20"
-                                           required autocomplete="on">
-                                </label>
-                            </div>
-                            <div class="policy__wrap">
-                                <input id="policy-check" type="checkbox" class="checkbox" required placeholder="Политика">
-                                <label for="policy-check">Регистрируясь, вы принимаете наши Условия, Политику
-                                    использования данных и Политику в отношении файлов cookie.</label>
-                            </div>
-                            <div class="form__msg">
-                                <div id="msg-error" class="msg msg-error"></div>
-                                <div id="msg-success" class="msg msg-success"></div>
-                            </div>
-                            <button type="submit" class="btn form__btn">Регистрация</button>
+                            <button class="btn">Сохранить</button>
                         </form>
                     </div>
                 </div>

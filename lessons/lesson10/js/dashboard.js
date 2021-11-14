@@ -1,31 +1,12 @@
+let tasks = [];
+let task;
+
 let projects = [{
     "project-name": "Project 1",
-    "tasks-list": [
-        {
-            "name": "Task 1",
-            "create-date": "10.11.21",
-            "deadline-date": "10.11.21",
-        },
-        {
-            "name": "Task 2",
-            "create-date": "11.11.21",
-            "deadline-date": "15.11.21",
-        },
-    ],
+    "tasks-list": task[0],
 },{
     "project-name": "Project 2",
-    "tasks-list": [
-        {
-            "name": "Task 1",
-            "create-date": "10.11.21",
-            "deadline-date": "15.11.21",
-        },
-        {
-            "name": "Task 2",
-            "create-date": "11.11.21",
-            "deadline-date": "15.11.21",
-        },
-    ],
+    "tasks-list": task[1],
 }]
 
 let taskAddBlock = document.querySelector(".task-block__form");
@@ -46,6 +27,41 @@ taskAddBtn.addEventListener("click", (event) => {
 newTaskAddBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
-    console.log(taskNameInput.value);
-    console.log(taskDeadlineInput.value);
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0');
+    let yyyy = today.getFullYear();
+    today = yyyy + '-' + mm + '-' + dd;
+
+    task = {
+        "name": taskNameInput.value,
+        "create-date": today,
+        "deadline-date": taskDeadlineInput.value,
+    }
+    tasks.push(task);
+
+    createTask(task);
 })
+
+let tasksBlock = document.querySelector(".tasks-list__wrap");
+
+function createTask(task) {
+    let taskItem = document.createElement("div");
+    taskItem.classList.add("tasks-list__item");
+    tasksBlock.append(taskItem);
+
+    let taskName = document.createElement("div");
+    taskName.classList.add("tasks-list__item-name");
+    taskName.innerText = task.name;
+    taskItem.append(taskName);
+
+    let taskDate = document.createElement("div");
+    taskDate.classList.add("tasks-list__item-date");
+    taskDate.innerText = `Создана: ` + task["create-date"];
+    taskItem.append(taskDate);
+
+    let taskDeadline = document.createElement("div");
+    taskDeadline.classList.add("tasks-list__item-deadline");
+    taskDeadline.innerText = `Дедлайн: ` + task["deadline-date"];
+    taskItem.append(taskDeadline);
+}
