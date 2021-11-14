@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="../../assets/styles/styles.css" rel="stylesheet">
+    <link href="../../assets/styles/blocks/form.css" rel="stylesheet">
 
     <link href="../../assets/styles/blocks/dashboard.css" rel="stylesheet">
 
@@ -22,59 +23,55 @@
                 Project 1
             </h2>
             <div class="sidebar">
-                <select name="projects" id="projects">
+                <select name="projects" id="projects" class="form__select">
                     <option value="project-1">Project 1</option>
                     <option value="project-2">Project 2</option>
                 </select>
-                <div class="sidebar__list">
-                    <a href="">Dashboard</a>
-                </div>
-                <div class="">
-                    <a href="" class="btn__add">Add new task</a>
+                <div class="dashboard__task-block">
+                    <div class="btn__add">Add new task</div>
+                    <form id="js__add-task" class="form task-block__form task-block__form_none">
+                        <div class="form__item">
+                            <label for="task-name" class="form__label">Название задачи:</label>
+                            <input id="task-name" type="text" class="form__input" placeholder="Название задачи">
+                        </div>
+                        <div class="form__item">
+                            <label for="task-deadline" class="form__label">Дедлайн задачи:</label>
+                            <input id="task-deadline" type="date" class="form__input" placeholder="Дедлайн">
+                        </div>
+                        <button id="task-add-btn" class="btn" type="click">Добавить задачу</button>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="dashboard__item dashboard__item_center">
-            <div class="">
+            <div class="dashboard__date">
                 <div class="">
-                    <div class="title">Dashboard</div>
+                    <div class="title mb_12">Dashboard</div>
                     <div class="current-date">
                         <span>Sunday</span>, 07 November 2021
                     </div>
                 </div>
                 <div class="">
-                    <input type="date" id="current-week" name="current-week" value="">
+                    <input type="date" id="current-week" name="current-week" value="" class="form__input">
                 </div>
             </div>
-            <div class="">
-                <div class="">
-                    <div class="">Weekly Activity</div>
-                </div>
-                <div class="">
-                    <div class="">
-                        <span>40+</span>
-                        <span>Projects</span>
-                    </div>
-                    <div class="">
-                        <span>60+</span>
-                        <span>Tasks</span>
-                    </div>
-                </div>
-            </div>
-            <div class="">
-                <div class="">
-                    <div class="title">Task</div>
-                    <div class=""><span>10 minutes</span> on this week</div>
-                    <div class=""></div>
-                </div>
-                <div class="">
-                    <div class="title">Task List</div>
-                    <div class="">
+
+            <div class="dashboard__task-list">
+                <div class="task-list">
+                    <div class="title mb_12">Task List</div>
+                    <div class="tasks-list__current-date">
                         <span>November</span> 07th
                     </div>
-                    <div class="__wrap">
-                        <div class="__item">
-
+                    <div class="tasks-list__wrap">
+                        <div class="tasks-list__item">
+                            <div class="tasks-list__item-name">Task 1</div>
+                            <div class="tasks-list__item-date"><span>Создана: </span>10.11.21</div>
+                            <div class="tasks-list__item-deadline"><span>Дедлайн: </span>10.11.21</div>
+                        </div>
+                        <div class="tasks-list__item">
+                            <div class="tasks-list__item-name">Task 2</div>
+                            <div class="tasks-list__item-date"><span>Создана: </span> 10.11.21</div>
+                            <div class="tasks-list__item-deadline"><span>Дедлайн: </span>10.11.21</div>
                         </div>
                     </div>
                 </div>
@@ -89,19 +86,18 @@
                 <div class="user-name">Natalie Doroshenko</div>
                 <div class="user-post">Frontend developer</div>
             </div>
-            <div class="">
+            <div class="dashboard__projects">
                 <div class="title">
-                    <span>Current project</span>
-                    <a href="">View all</a>
+                    Projects list
                 </div>
-                <div class="">
-                    <div class="">
-                        <div class="">Project 1</div>
-                        <div class="48%"></div>
+                <div class="projects-list">
+                    <div class="projects-list__item">
+                        <div class="projects-list__item-name">Project 1</div>
+                        <div class="projects-list__item-percent">48%</div>
                     </div>
-                    <div class="">
+                    <div class="projects-list__item">
                         <div class="">Project 2</div>
-                        <div class="48%"></div>
+                        <div class="projects-list__item-percent">48%</div>
                     </div>
                 </div>
             </div>

@@ -68,7 +68,9 @@
 .user-post {
     font-size: 14px;
 }
-
+.dashboard__task-block {
+    margin: 20px 0;
+}
 .btn__add {
     display: block;
     position: relative;
@@ -77,6 +79,7 @@
     border-radius: var(--border-radius);
     background-color: var(--color-light-grey);
     font-weight: bolder;
+    cursor: pointer;
 }
 
 .btn__add::after {
@@ -94,4 +97,54 @@
     font-weight: bolder;
     text-align: center;
     vertical-align: middle;
+}
+.task-block__form {
+    margin: 20px 0 0;
+}
+.task-block__form.task-block__form_none {
+    display: none;
+}
+.dashboard__date {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
+}
+
+.tasks-list__wrap {
+    margin: 20px 0;
+
+}
+.tasks-list__item {
+    display: grid;
+    grid-template-areas: "item-name item-name"
+                        "item-date item-deadline";
+    padding: 20px 10px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    background-color: #fff;
+}
+.tasks-list__item span {
+    font-weight: bolder;
+}
+.tasks-list__item-name {
+    grid-area: item-name;
+    font-weight: bolder;
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+.tasks-list__item-date {
+    grid-area: item-date;
+}
+.tasks-list__item-deadline {
+    grid-area: item-deadline;
+}
+.projects-list {
+
+}
+.projects-list__item {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--color-light-grey);
+
 }
