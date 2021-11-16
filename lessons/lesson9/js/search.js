@@ -29,9 +29,10 @@ async function search(searchQuery){
 
 
 function createImage(result){
-    for (let i =0; i< result.data.length; i++){
-        let img = document.createElement("img");
-        img.src = result.data[i].images.original.url;
-        searchResultBlock.appendChild(img);
+    for (let item of result.data) {
+        let src = item.images.original.url;
+        let imgItem = document.createElement("img");
+        imgItem.src = src;
+        searchResultBlock.appendChild(imgItem);
     }
 }
