@@ -135,6 +135,9 @@ a:hover {
 .mb_20 {
     margin-bottom: 20px !important;
 }
+.mt_40 {
+    margin-top: 40px !important;
+}
 
 .width_50 {
     max-width: 50% !important;
@@ -143,4 +146,9 @@ a:hover {
 
 .list__wrap {
     list-style-position: inside;
+}
+
+.line {
+    margin: 40px 0;
+    border: 2px solid var(--color-light-grey);
 }
